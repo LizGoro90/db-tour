@@ -53,8 +53,8 @@ func main() {
 		log.Printf(`SUGGESTION: Change OrderBy("-xid") into OrderBy("id") on the result set definition and try again.`)
 	}
 
-	// Remember to use Close to close the database and free any associated
-	// resource. There's no need to call Close when using One or All.
+	// Remember to use Close to close the database and free any locked resource.
+	// There's no need to call Close when using One or All.
 	if err := res.Close(); err != nil {
 		log.Fatal("Close: ", err)
 	}

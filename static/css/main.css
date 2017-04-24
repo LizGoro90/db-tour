@@ -1,0 +1,96 @@
+body {
+	font-size: 1.2em;
+	font-family: Arial, sans-serif;
+	line-height: 1.3em;
+	padding: 0px;
+	margin: 0px;
+	background: #fefefe;
+	color: #333;
+}
+#content {
+	position: absolute;
+	overflow: hidden;
+	bottom: 30px;
+	left: 0px;
+	right: 0px;
+	top: 50px;
+}
+
+.column {
+	width: 50%;
+	position: relative;
+	float: left;
+	overflow: auto;
+}
+
+.column.readme {
+	height: 100%;
+}
+
+.column.exercise {
+	height: 500px;
+}
+
+.column .content {
+	margin: 10px;
+	overflow: auto;
+}
+
+.play {
+	position: relative;
+	top: 0px;
+	bottom: 600px;
+}
+.exampleHeading {
+	display: none;
+}
+#content .CodeMirror {
+	height: 100%;
+}
+
+#header {
+	color: #fff;
+	background: #333;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+}
+#controls {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 50px;
+}
+#controls {
+	padding: 0px;
+	margin: 0px;
+	line-height: 40px;
+	list-style: none;
+}
+#controls li {
+	padding: 0px;
+	margin: 0px;
+	float: left;
+	padding: 5px;
+}
+#controls li a {
+	display: block;
+	border: 1px solid red;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+#footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.heart {
+	color: #f00;
+}
