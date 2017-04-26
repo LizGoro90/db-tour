@@ -9,11 +9,14 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"regexp"
 	"strconv"
 
 	"github.com/pressly/chi"
 	"github.com/russross/blackfriday"
 )
+
+var reSection = regexp.MustCompile(`[^a-z0-9\-]`)
 
 type tourPage struct {
 	Readme   template.HTML
@@ -36,14 +39,22 @@ func internalError(w http.ResponseWriter, err error) {
 }
 
 func tour(w http.ResponseWriter, r *http.Request) {
-	task := chi.URLParam(r, "task")
-	n, err := strconv.Atoi(task)
+
+	section := chi.URLParam(r, "section")
+	section = reSection.ReplaceAllString(section, "")
+	if section == "" {
+		internalError(w, errors.New("Missing section"))
+		return
+	}
+
+	number := chi.URLParam(r, "number")
+	n, err := strconv.Atoi(number)
 	if err != nil {
 		internalError(w, err)
 		return
 	}
 
-	taskDir := fmt.Sprintf("example-%02d", n)
+	taskDir := fmt.Sprintf("%s/%02d", section, n)
 
 	info, err := os.Stat(taskDir)
 	if err != nil {
@@ -82,7 +93,7 @@ func tour(w http.ResponseWriter, r *http.Request) {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/tour/01", 301)
+	http.Redirect(w, r, "/welcome/1", 301)
 }
 
 func main() {
@@ -90,8 +101,8 @@ func main() {
 
 	fs := http.FileServer(http.Dir("."))
 
-	r.Get("/tour/:task", tour)
 	r.Get("/static/*", fs.ServeHTTP)
+	r.Get("/:section/:number", tour)
 	r.Get("/*", index)
 
 	http.ListenAndServe(":4000", r)
