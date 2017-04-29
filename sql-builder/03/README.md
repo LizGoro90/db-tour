@@ -1,4 +1,4 @@
-# How to create UPDATE, INSERT and DELETE queries with the SQL builder
+# UPDATE, INSERT and DELETE queries
 
 The `SelectFrom` method creates and returns a [Selector][1] that can be used to
 build a SELECT query.
@@ -42,8 +42,8 @@ res, err = sess.InsertInto("books").
   Exec()
 ```
 
-Using `Columns` is not mandatory, the `Values` method can also take an struct
-and map column-values by itself, like this:
+In the example above, using `Columns` is not mandatory, the `Values` method can
+also take an struct and map column-values by itself, like this:
 
 ```go
 book := Book{

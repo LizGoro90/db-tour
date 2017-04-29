@@ -1,20 +1,21 @@
-# How to create SQL statements using the SQL builder
+# The SQL builder
 
 All of the adapters for SQL databases come with a handy SQL builder that you
-can use to help you composing SQL queries.
+can use to compose SQL queries.
 
 You can use any of the [SQLBuilder][1] methods to begin your query, for
-instance:
+instance `SelectFrom`:
 
 ```go
 q := sess.SelectFrom("books")
 ```
 
 The `SelectFrom` method returns a [Selector][2] and some of the `Selector`
-methods return `Selector` too so you can chain method calls like this:
+methods return `Selector` too, so you can chain method calls like this:
 
 ```go
-q := sess.SelectFrom("books").Where("title LIKE ?", "P%")
+q := sess.SelectFrom("books").
+  Where("title LIKE ?", "P%")
 ```
 
 Or
@@ -30,13 +31,12 @@ following example `q` is not affected by `Where`:
 
 ```go
 q := sess.SelectFrom("books")
-p := q.Where("title LIKE ?", "P%").OrderBy("title")
+p := q.Where("title LIKE ?", "P%").
+  OrderBy("title")
 ```
 
-## Map queries to Go types
-
-Use `All` or `One` on a query to compile, execute and map its results into a Go
-type:
+Use the `All` or `One` methods on a query to compile, execute and map its
+results into a Go type:
 
 ```go
 var books []Book
@@ -69,11 +69,8 @@ if err := iter.Close(); err != nil {
 }
 ```
 
-Remember to check for errors with `Err` and to close the iterator with `Close`
-once you're done with it.
-
-Continue with our next lesson to keep on [practising with the SQL
-builder](/tour/07).
+Once you're done with the iterator remember to check for any errors with `Err`
+and to free any locked resources with `Close`.
 
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder
 [2]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector

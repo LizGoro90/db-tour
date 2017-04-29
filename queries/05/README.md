@@ -1,11 +1,9 @@
-# How to update or delete items on a result set
+# Updating or deleting items on a result set
 
-Besides querying and mapping one or many elements into Go values, result-sets
-can be also used for updating or deleting all items on the result set.
+Besides querying for data, result-sets can also be used for updating or
+deleting all matching items.
 
-## Update items on a result-set
-
-If you want to update a result set use the `Update` method:
+If you want to update all the items on a result-set use the `Update` method:
 
 ```go
 var book Book
@@ -18,10 +16,9 @@ err = res.Update(book)
 ...
 ```
 
-Remember that `Update` will operate in the whole result set, in this case the
-result set has one element.
-
-The example below will update all items in the books table:
+Remember that `Update` will operate in the whole result-set. In the example
+above the whole result-set consists of only one element, while in the example
+below the result-set consists of all the items in the collection:
 
 ```go
 res := booksTable.Find()
@@ -31,10 +28,7 @@ err := res.Update(map[string]int{
 })
 ```
 
-## Delete items on a result-set
-
-Like with `Update`, you can delete all items on the result set by using
-`Delete`:
+As with `Update`, you can delete all items on the result set by using `Delete`:
 
 ```go
 res := booksTable.Find(4267)
@@ -43,7 +37,8 @@ err := res.Delete()
 // ...
 ```
 
-The example below will delete all items in the books table:
+The example above affects one item, and the example below will delete all items
+in the books table:
 
 
 ```go
