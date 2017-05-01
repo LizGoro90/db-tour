@@ -16,6 +16,8 @@ import (
 	"github.com/russross/blackfriday"
 )
 
+var playURL = "https://demo.upper.io"
+
 var listenAddr = "127.0.0.1:4000"
 
 var tutorials = []string{
@@ -51,6 +53,8 @@ type tourPage struct {
 	Prev     string
 	Current  int
 	Total    int
+
+	PlayURL string
 }
 
 func loadFile(file string) (buf []byte, err error) {
@@ -133,6 +137,8 @@ func tour(w http.ResponseWriter, r *http.Request) {
 		Current:  current + 1,
 		Next:     next,
 		Prev:     prev,
+
+		PlayURL: playURL,
 	})
 	if err != nil {
 		internalError(w, err)

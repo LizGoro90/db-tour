@@ -9,15 +9,16 @@
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-    <link href="//127.0.0.1:3000/static/example.css" rel="stylesheet" type="text/css" />
-    <link href="//127.0.0.1:3000/static/codemirror.css" rel="stylesheet" type="text/css" />
+    <link href="{{ .PlayURL }}/static/example.css" rel="stylesheet" type="text/css" />
+    <link href="{{ .PlayURL }}/static/codemirror.css" rel="stylesheet" type="text/css" />
+		<link href="//codemirror.net/theme/material.css" rel="stylesheet" type="text/css" />
 
     <link href="//upper.io/db.v3/css/style.css" rel="stylesheet">
     <link href="//upper.io/db.v3/css/syntax.css" rel="stylesheet">
     <link href="//upper.io/db.v3/css/upper.css" rel="stylesheet">
 
-    <script src="//127.0.0.1:3000/static/playground-full.js"></script>
-    <script src="//127.0.0.1:3000/static/snippets.js"></script>
+    <script src="{{ .PlayURL }}/static/playground-full.js"></script>
+    <script src="{{ .PlayURL }}/static/snippets.js"></script>
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//upper.io/db.v3/apple-touch-icon-precomposed.png">
     <link rel="shortcut icon" href="//upper.io/db.v3/favicon.ico">
@@ -26,10 +27,11 @@
 
     <script>
     goPlaygroundOptions({
-      'shareRedirect': 'https://demo.upper.io/p/',
-      'shareURL': 'https://demo.upper.io/share',
-      'compileURL': 'https://demo.upper.io/compile',
-      'fmtURL': 'https://demo.upper.io/fmt',
+      'shareRedirect': '{{ .PlayURL }}/p/',
+      'shareURL': '{{ .PlayURL }}/share',
+      'compileURL': '{{ .PlayURL }}/compile',
+      'theme': 'material',
+      'fmtURL': '{{ .PlayURL }}/fmt',
       'shareOpenNewWindow': true
     });
     </script>
@@ -40,7 +42,7 @@
         <div class="nav--sections">
 					<ul class="breadcrumb">
 						<li><a href="/db.v3/">Home</a></li>
-						<li><a href="/db.v3/tour">Tour</a></li>
+						<li><a href="/">Tour</a></li>
 					</ul>
         </div>
         <div class="nav--adapters">
