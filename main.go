@@ -16,6 +16,8 @@ import (
 	"github.com/russross/blackfriday"
 )
 
+var listenAddr = "127.0.0.1:4000"
+
 var tutorials = []string{
 	"welcome/01",
 
@@ -140,7 +142,9 @@ func tour(w http.ResponseWriter, r *http.Request) {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/welcome/1", 301)
+	if len(tutorials) > 0 {
+		http.Redirect(w, r, tutorials[0], 301)
+	}
 }
 
 func main() {
@@ -152,5 +156,7 @@ func main() {
 	r.Get("/:section/:number", tour)
 	r.Get("/*", index)
 
-	http.ListenAndServe(":4000", r)
+	log.Printf("Listening at %s", listenAddr)
+
+	http.ListenAndServe(listenAddr, r)
 }
