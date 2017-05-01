@@ -37,9 +37,3 @@ if err != nil {
 
 Depending on your application this error may or may not be fatal, make sure
 you're handling it properly.
-
-## Updating and deleting items on a result-set
-
-A result-set is not only useful for querying data. Result-sets can also be used
-to update or delete items. We'll learn more about [how to update and delete
-items](/tour/04) on a result-set on our next exercise.

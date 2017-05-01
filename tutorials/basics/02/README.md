@@ -14,11 +14,6 @@ collections, err := sess.Collections()
 log.Printf("Collections in %q: %v", sess.Name(), collections)
 ```
 
-## How to get all items on a collection
-
-Go to our [next example](/tour/01) to see how to get and map all items on a
-collection and map them into a Go type.
-
 [1]: https://godoc.org/upper.io/db.v3#ConnectionURL
 [2]: https://godoc.org/upper.io/db.v3#Database
 [3]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Database

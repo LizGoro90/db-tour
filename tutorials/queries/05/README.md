@@ -47,10 +47,3 @@ res := booksTable.Find()
 err := res.Delete()
 ...
 ```
-
-## Insert more items into a collection
-
-Result sets can only work with items that are already part of a collection, if
-you want to insert new items you'll have to use the `Insert` or
-`InsertReturning` methods on the collection. Continue to our next example to
-learn [how to insert new items into a table or collection](/tour/05).

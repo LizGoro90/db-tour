@@ -69,8 +69,7 @@ res, err := q.Exec()
 See the
 [sqlbuilder.SQLBuilder](https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder)
 interface to learn about all available methods that can be used to build or
-execute SQL statements. Continue with our next lesson on [how to use raw
-SQL](/tour/09).
+execute SQL statements.
 
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector
 [2]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Updater

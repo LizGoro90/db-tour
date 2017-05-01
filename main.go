@@ -16,9 +16,11 @@ import (
 	"github.com/russross/blackfriday"
 )
 
+const tutorialsDir = "./tutorials"
+
 var playURL = "https://demo.upper.io"
 
-var listenAddr = "127.0.0.1:4000"
+var listenAddr = "0.0.0.0:4000"
 
 var tutorials = []string{
 	"welcome/01",
@@ -90,7 +92,7 @@ func tour(w http.ResponseWriter, r *http.Request) {
 
 	taskDir := fmt.Sprintf("%s/%02d", section, n)
 
-	info, err := os.Stat(taskDir)
+	info, err := os.Stat(path.Join(tutorialsDir, taskDir))
 	if err != nil {
 		internalError(w, err)
 		return
@@ -100,13 +102,13 @@ func tour(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	exerciseBytes, err := loadFile(path.Join(taskDir, "main.go"))
+	exerciseBytes, err := loadFile(path.Join(tutorialsDir, taskDir, "main.go"))
 	if err != nil {
 		internalError(w, err)
 		return
 	}
 
-	readmeBytes, err := loadFile(path.Join(taskDir, "README.md"))
+	readmeBytes, err := loadFile(path.Join(tutorialsDir, taskDir, "README.md"))
 	if err != nil {
 		internalError(w, err)
 		return
@@ -144,7 +146,6 @@ func tour(w http.ResponseWriter, r *http.Request) {
 		internalError(w, err)
 		return
 	}
-
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
@@ -163,6 +164,7 @@ func main() {
 	r.Get("/*", index)
 
 	log.Printf("Listening at %s", listenAddr)
-
-	http.ListenAndServe(listenAddr, r)
+	if err := http.ListenAndServe(listenAddr, r); err != nil {
+		log.Fatal("http:", err)
+	}
 }

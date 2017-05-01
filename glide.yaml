@@ -1,0 +1,11 @@
+package: .
+import:
+- package: github.com/pressly/chi
+  version: ~2.1.0
+- package: github.com/russross/blackfriday
+  version: ~1.4.0
+- package: upper.io/db.v3
+  version: ~3.0.1
+  subpackages:
+  - lib/sqlbuilder
+  - postgresql
