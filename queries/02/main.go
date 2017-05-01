@@ -13,8 +13,8 @@ var settings = postgresql.ConnectionURL{
 	Password: `demop4ss`,
 }
 
-// Book represents an item from the "books" table, column names are mapped to
-// Go values.
+// Book represents an item from the "books" table, column
+// names are mapped to Go values.
 type Book struct {
 	ID        uint   `db:"id"`
 	Title     string `db:"title"`
@@ -29,56 +29,61 @@ func main() {
 	}
 	defer sess.Close()
 
-	// The SetLogging method enables or disables logging to stdout, use logging
-	// to see the queries upper-db builds and how much time they take.
+	// The SetLogging method enables or disables logging to
+	// stdout, use logging to see the queries upper-db builds
+	// and how much time they take.
 	sess.SetLogging(false) // Set to true to enable logging.
 
-	// The Collection method points to a database collection (or table). See
-	// https://godoc.org/upper.io/db.v3#Collection for a list of all available
-	// methods on a collection.
+	// The Collection method points to a database collection
+	// (or table). See
+	// https://godoc.org/upper.io/db.v3#Collection for a list
+	// of all available methods on a collection.
 	nonexistentTable := sess.Collection("nonexistent_table")
 
-	// If the DBMS you're working with does not allow to use collections or
-	// tables unless they exist this will fail.
+	// If the DBMS you're working with does not allow to use
+	// collections or tables unless they exist this will fail.
 	_, err = nonexistentTable.Insert(&Book{})
 	if err != nil {
 		log.Println("nonexistent_table: ", err)
 	}
 
-	// If you must check for table existence use the Exists method.
+	// If you must check for table existence use the Exists
+	// method.
 	if !nonexistentTable.Exists() {
 		log.Println("The nonexistent_table does not exist.")
 	}
 
-	// The "books" table is one of the tables that already exists on our test
-	// database.
+	// The "books" table is one of the tables that already
+	// exists on our test database.
 	booksTable := sess.Collection("books")
 
-	// Use Find on a collection to create a db.Result result set. See
-	// https://godoc.org/upper.io/db.v3#Result for all methods on result sets.
+	// Use Find on a collection to create a db.Result result
+	// set. See https://godoc.org/upper.io/db.v3#Result for
+	// all methods on result sets.
 	res := booksTable.Find()
 
-	// A result set can be modified by chaining any of the other db.Result
-	// methods that return a new db.Result, like Where, And, OrderBy, Select,
-	// Limit and Group.
+	// A result set can be modified by chaining any of the
+	// other db.Result methods that return a new db.Result,
+	// like Where, And, OrderBy, Select, Limit and Group.
 	res = res.OrderBy("-title") // ORDER BY title DESC
 
-	// A result set is lazy and does not build not send query to the database
-	// until you use one of the methods that require interaction with the
-	// database. Like One or All.
+	// A result set is lazy and does not build not send query
+	// to the database until you use one of the methods that
+	// require interaction with the database. Like One or All.
 	var books []Book
 	if err := res.All(&books); err != nil {
 		log.Fatal(err)
 	}
 
-	// The All method dumps all the items in the result set into a Go slice.
+	// The All method dumps all the items in the result set
+	// into a Go slice.
 	log.Printf("Items in %q table:\n", booksTable.Name())
 	for _, book := range books {
 		log.Printf("Item %d:\t%q\n", book.ID, book.Title)
 	}
 
-	// A result set can be reused many times, here we're counting all the items
-	// in the result set.
+	// A result set can be reused many times, here we're
+	// counting all the items in the result set.
 	total, err := res.Count()
 	if err != nil {
 		log.Fatal("Count: ", err)

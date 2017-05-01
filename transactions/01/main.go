@@ -47,17 +47,19 @@ func main() {
 
 	sess.SetLogging(true)
 
-	// The ctx variable is going to be passed to sess.Tx, you can use any
-	// context.Context here. If you don't want to use a special context you
-	// can also pass nil.
+	// The ctx variable is going to be passed to sess.Tx, you
+	// can use any context.Context here. If you don't want to
+	// use a special context you can also pass nil.
 	ctx := context.Background()
 
-	// sess.Tx requires a function, this function takes a single sqlbuilder.Tx
-	// argument and returns an error. The tx value is just like sess, except it
-	// lives within a transaction.  If the function returns any error, the
+	// sess.Tx requires a function, this function takes a
+	// single sqlbuilder.Tx argument and returns an error. The
+	// tx value is just like sess, except it lives within a
+	// transaction.  If the function returns any error, the
 	// transaction will be rolled back.
 	err = sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
-		// Anything you do here with the tx value will be part of the transaction.
+		// Anything you do here with the tx value will be part
+		// of the transaction.
 		cols, err := tx.Collections()
 		if err != nil {
 			return err

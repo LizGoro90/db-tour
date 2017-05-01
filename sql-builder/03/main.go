@@ -46,7 +46,8 @@ func main() {
 
 	var eaPoe Author
 
-	// Using sqlbuilder.Selector to get E .A. Poe from our authors table.
+	// Using sqlbuilder.Selector to get E .A. Poe from our
+	// authors table.
 	err = sess.SelectFrom("authors").
 		Where("last_name", "Poe"). // Or Where("last_name = ?", "Poe")
 		One(&eaPoe)
@@ -55,7 +56,8 @@ func main() {
 	}
 	log.Printf("%#v", eaPoe)
 
-	// The name says "Edgar Allen", let's fit it using sqlbuilder.Updater:
+	// The name says "Edgar Allen", let's fit it using
+	// sqlbuilder.Updater:
 	res, err := sess.Update("authors").
 		Set("first_name = ?", "Edgar Allan"). // Or Set("first_name", "Edgar Allan").
 		Where("id = ?", eaPoe.ID).            // Or Where("id", eaPoe.ID)
@@ -80,7 +82,8 @@ func main() {
 		log.Printf("New book id: %d", id)
 	}
 
-	// Delete the book we just created (and any book with the same name).
+	// Delete the book we just created (and any book with the
+	// same name).
 	q := sess.DeleteFrom("books").
 		Where("title", "The Crow")
 	log.Printf("Compiled query: %v", q)

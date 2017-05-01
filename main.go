@@ -16,11 +16,39 @@ import (
 	"github.com/russross/blackfriday"
 )
 
+var tutorials = []string{
+	"welcome/01",
+
+	"basics/01",
+	"basics/02",
+	"basics/03",
+
+	"queries/01",
+	"queries/02",
+	"queries/03",
+	"queries/04",
+	"queries/05",
+	"queries/06",
+
+	"sql-builder/01",
+	"sql-builder/02",
+	"sql-builder/03",
+	"sql-builder/04",
+
+	"transactions/01",
+
+	"final/01",
+}
+
 var reSection = regexp.MustCompile(`[^a-z0-9\-]`)
 
 type tourPage struct {
 	Readme   template.HTML
 	Exercise string
+	Next     string
+	Prev     string
+	Current  int
+	Total    int
 }
 
 func loadFile(file string) (buf []byte, err error) {
@@ -79,11 +107,30 @@ func tour(w http.ResponseWriter, r *http.Request) {
 	}
 	readmeBytes = blackfriday.MarkdownCommon(readmeBytes)
 
+	var prev, next string
+	var current int
+	for i := range tutorials {
+		if tutorials[i] == taskDir {
+			if i > 0 {
+				prev = tutorials[i-1]
+			}
+			if i+1 < len(tutorials) {
+				next = tutorials[i+1]
+			}
+			current = i
+			break
+		}
+	}
+
 	indexTpl := template.Must(template.ParseFiles("static/index.html"))
 
 	err = indexTpl.Execute(w, &tourPage{
 		Readme:   template.HTML(readmeBytes),
 		Exercise: string(exerciseBytes),
+		Total:    len(tutorials),
+		Current:  current + 1,
+		Next:     next,
+		Prev:     prev,
 	})
 	if err != nil {
 		internalError(w, err)

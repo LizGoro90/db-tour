@@ -3,8 +3,9 @@ package main
 import (
 	"log"
 
-	// The db.v3 package provides utilities for building generic queries, like
-	// the db.Cond type, or error values.
+	// The db.v3 package provides utilities for building
+	// generic queries, like the db.Cond type, or error
+	// values.
 	"upper.io/db.v3"
 	"upper.io/db.v3/postgresql"
 )
@@ -16,8 +17,8 @@ var settings = postgresql.ConnectionURL{
 	Password: `demopass`,
 }
 
-// Book represents an item from the "books" table. This table
-// has a primary key of integer type ("id"):
+// Book represents an item from the "books" table. This
+// table has a primary key of integer type ("id"):
 //
 // booktown=> \d books
 //        Table "public.books"
@@ -53,8 +54,9 @@ func main() {
 
 	var book Book
 
-	// If this table has an integer primary key you can pass an int to Find and
-	// Find will look for the element that matches that primary key.
+	// If this table has an integer primary key you can pass
+	// an int to Find and Find will look for the element that
+	// matches that primary key.
 	err = booksTable.Find(1).One(&book)
 	if err != nil {
 		if err == db.ErrNoMoreRows {

@@ -24,6 +24,7 @@ func main() {
 	col := sess.Collection("books")
 
 	// You can use any of the methods defined on
-	// https://godoc.org/upper.io/db.v3#Collection on this collection reference.
+	// https://godoc.org/upper.io/db.v3#Collection on this
+	// collection reference.
 	log.Println("Collection:", col.Name(), "Exists?:", col.Exists())
 }

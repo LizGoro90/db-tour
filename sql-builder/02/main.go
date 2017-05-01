@@ -62,11 +62,11 @@ func main() {
 
 	sess.SetLogging(true)
 
-	// The BookAuthorSubject type represents an element that has columns from
-	// different tables.
+	// The BookAuthorSubject type represents an element that
+	// has columns from different tables.
 	type BookAuthorSubject struct {
-		// The book_id column was added to prevent collisions with the other "id"
-		// columns from Author and Subject.
+		// The book_id column was added to prevent collisions
+		// with the other "id" columns from Author and Subject.
 		BookID uint `db:"book_id"`
 
 		Book    `db:",inline"`
@@ -74,14 +74,16 @@ func main() {
 		Subject `db:",inline"`
 	}
 
-	// This is a query with a JOIN clause that was built using the SQL builder.
+	// This is a query with a JOIN clause that was built using
+	// the SQL builder.
 	q := sess.Select("b.id AS book_id", "*"). // Note how we set an alias for book.id.
 							From("books AS b").
 							Join("subjects AS s").On("b.subject_id = s.id").
 							Join("authors AS a").On("b.author_id = a.id").
 							OrderBy("a.last_name", "b.title")
 
-	// The JOIN query above returns data from three different tables.
+	// The JOIN query above returns data from three different
+	// tables.
 	var books []BookAuthorSubject
 	if err := q.All(&books); err != nil {
 		log.Fatal("q.All: ", err)

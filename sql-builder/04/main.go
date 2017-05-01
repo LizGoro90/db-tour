@@ -47,13 +47,14 @@ func main() {
 
 	var eaPoe Author
 
-	// If you ever need to use raw SQL, use the Query, QueryRow and Exec methods
-	// of sess:
+	// If you ever need to use raw SQL, use the Query,
+	// QueryRow and Exec methods of sess:
 	rows, err := sess.Query(`SELECT id, first_name, last_name FROM authors WHERE last_name = ?`, "Poe")
 	if err != nil {
 		log.Fatal("Query: ", err)
 	}
-	// This is a standard query that mimics the API from database/sql.
+	// This is a standard query that mimics the API from
+	// database/sql.
 	if !rows.Next() {
 		log.Fatal("Expecting one row")
 	}
@@ -66,24 +67,26 @@ func main() {
 
 	log.Printf("%#v", eaPoe)
 
-	// Make sure you're using Exec or Query depending on the specific situation.
+	// Make sure you're using Exec or Query depending on the
+	// specific situation.
 	_, err = sess.Exec(`UPDATE authors SET first_name = ? WHERE id = ?`, "Edgar Allan", eaPoe.ID)
 	if err != nil {
 		log.Printf("Query: %v. This is expected on the read-only sandbox", err)
 	}
 
-	// The sqlbuilder package providers tools for working with raw sql.Rows, such
-	// as the NewIterator function.
+	// The sqlbuilder package providers tools for working with
+	// raw sql.Rows, such as the NewIterator function.
 	rows, err = sess.Query(`SELECT * FROM books LIMIT 5`)
 	if err != nil {
 		log.Fatal("Query: ", err)
 	}
 
-	// The NewIterator function takes a *sql.Rows value and returns an iterator.
+	// The NewIterator function takes a *sql.Rows value and
+	// returns an iterator.
 	iter := sqlbuilder.NewIterator(rows)
 
-	// This iterator provides methods for iterating over data, such as All, One,
-	// Next and friends.
+	// This iterator provides methods for iterating over data,
+	// such as All, One, Next and friends.
 	var books []Book
 	if err := iter.All(&books); err != nil {
 		log.Fatal("Query: ", err)
