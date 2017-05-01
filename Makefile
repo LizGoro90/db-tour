@@ -1,5 +1,5 @@
-CONTAINER_IMAGE ?= xiam/upper-db-tour
-CONTAINER_NAME  ?= upper-db-tour
+CONTAINER_IMAGE ?= upper/db-tour
+CONTAINER_NAME  ?= upper/tour
 TAG ?= latest
 
 run:
