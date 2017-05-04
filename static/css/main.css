@@ -3,6 +3,7 @@ main.tour {
 }
 main.tour .feature {
   padding-top: 0.5em;
+  clear: both;
 }
 .exampleHeading {
   display: none;
@@ -27,8 +28,11 @@ ul.tour-nav {
 
 @media screen and (min-width: 980px) {
   ul.tour-nav {
-  float: right;
+    float: right;
     margin-top: 2em;
+  }
+  main.tour .feature {
+    clear: none;
   }
 }
 
