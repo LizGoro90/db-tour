@@ -3,10 +3,6 @@ package main
 import (
 	"log"
 
-	// The db.v3 package provides utilities for building
-	// generic queries, like the db.Cond type, or error
-	// values.
-	"upper.io/db.v3"
 	"upper.io/db.v3/postgresql"
 )
 
@@ -14,59 +10,51 @@ var settings = postgresql.ConnectionURL{
 	Database: `booktown`,
 	Host:     `demo.upper.io`,
 	User:     `demouser`,
-	Password: `demopass`,
+	Password: `demop4ss`,
 }
 
-// Book represents an item from the "books" table. This
-// table has a primary key of integer type ("id"):
-//
-// booktown=> \d books
-//        Table "public.books"
-//    Column   |  Type   | Modifiers
-// ------------+---------+-----------
-//  id         | integer | not null
-//  title      | text    | not null
-//  author_id  | integer |
-//  subject_id | integer |
-// Indexes:
-//     "books_id_pkey" PRIMARY KEY, btree (id)
-//     "books_title_idx" btree (title)
-type Book struct {
+// Customer represents an item from the "customers" table.
+type Customer struct {
 	ID        uint   `db:"id"`
-	Title     string `db:"title"`
-	AuthorID  uint   `db:"author_id"`
-	SubjectID uint   `db:"subject_id"`
+	FirstName string `db:"first_name"`
+	LastName  string `db:"last_name"`
 }
 
 func main() {
 	sess, err := postgresql.Open(settings)
 	if err != nil {
-		log.Printf("Could not establish a connection with database: %v.", err)
-		log.Fatalf(`SUGGESTION: Set password to "demop4ss" and try again.`)
+		log.Fatal(err)
 	}
 	defer sess.Close()
 
-	sess.SetLogging(true)
+	customersTable := sess.Collection("customers")
 
-	log.Printf("Connected to %q using %q", sess.Name(), sess.ConnectionURL())
+	// Creates a paginator with 10 items per page.
+	p := customersTable.Find().
+		OrderBy("last_name", "first_name").
+		Paginate(10)
 
-	booksTable := sess.Collection("books")
+	var customers []Customer
 
-	var book Book
-
-	// If this table has an integer primary key you can pass
-	// an int to Find and Find will look for the element that
-	// matches that primary key.
-	err = booksTable.Find(1).One(&book)
+	// Grabs page 2.
+	err = p.Page(2).All(&customers)
 	if err != nil {
-		if err == db.ErrNoMoreRows {
-			log.Printf("One: %v", err)
-			log.Printf("SUGGESTION: Change Find(1) into Find(4267).")
-		} else {
-			log.Printf("One: %v", err)
-		}
-		log.Fatal("An error ocurred, cannot continue.")
+		log.Fatal(err)
 	}
 
-	log.Printf("Book: %#v", book)
+	for i, customer := range customers {
+		log.Printf("%d: %s, %s", i, customer.LastName, customer.FirstName)
+	}
+
+	totalNumberOfEntries, err := p.TotalEntries()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	totalNumberOfPages, err := p.TotalPages()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("total entries: %d, total pages: %d", totalNumberOfEntries, totalNumberOfPages)
 }

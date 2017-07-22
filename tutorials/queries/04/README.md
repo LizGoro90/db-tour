@@ -1,39 +1,49 @@
-# Debugging
+# Pagination
 
-Logging is pretty useful when debugging a query. To enable on-screen logging
-use:
+Pagination API lets you split the results of a query into chunks containing a
+fixed number of items.
 
-
-```go
-sess.SetLogging(true)
-```
-
-When logging is enabled, upper-db will print queries to `stdout`. Please keep
-in mind that logging is slow and verbose, make sure to disable it on
-production:
+### Simple pagination for db.Result
 
 ```go
-sess.SetLogging(false)
+res = sess.Collection("posts").Paginate(20) // 20 results per page
+
+err = res.All(&posts) // First 20 results of the query
+
+err = res.Page(2).All(&posts) // Results from page 2 (limit 20, offset 40)
 ```
 
-## Error handling
-
-The `db.ErrNoMoreRows` error is returned by `One` or `All` when the result-set
-has zero items.
+### Simple pagination for SQL builder
 
 ```go
-// If this table has an integer primary key you can pass an int to Find and
-// Find will look for the element that matches that primary key.
-err = booksTable.Find(1).One(&book)
-if err != nil {
-  if err == db.ErrNoMoreRows {
-    // This was expected, let's create a new element.
-  } else {
-    // Something else happened!
-    return err
-  }
-}
+q = sess.SelectFrom("posts").Paginate(20)
+
+err = res.All(&posts) // First 20 results of the query
+
+err = res.Page(2).All(&posts) // Results from page 2 (limit 20, offset 40)
 ```
 
-Depending on your application this error may or may not be fatal, make sure
-you're handling it properly.
+### Cursor based pagination (both for db.Result and SQL Builder)
+
+```go
+res = sess.Collection("posts").
+  Paginate(20). // 20 results per page
+  Cursor("id") // using id as cursor
+
+err = res.All(&posts) // First 20 results of the query
+
+// Get the next 20 results starting from the last item of the previous query.
+res = res.NextPage(posts[len(posts)-1].ID)
+err = res.All(&posts) // Results from page 1, limit 20, offset 20
+```
+
+### Other commonly used pagination tools
+
+```go
+res = res.Paginate(23)
+
+totalNumberOfEntries, err = res.TotalEntries()
+
+totalNumberOfPages, err = res.TotalPages()
+```
+

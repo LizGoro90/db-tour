@@ -1,52 +1,49 @@
-# Inserting new items into a collection
+# Updating or deleting items on a result set
 
+Besides querying for data, result-sets can also be used for updating or
+deleting all matching items.
 
-Use the `Insert` method on a collection reference to insert a new item:
-
-```go
-book := Book{
-  Title:    "Kokoro",
-  AuthorID: 123,
-}
-
-booksTable := sess.Collection("books")
-
-id, err := booksTable.Insert(book)
-```
-
-If the table was configured to generate and insert a new primary key
-automatically, the `Insert` method will return the ID of the new element (as an
-`interface{}`). Note that `Insert` does not modify the passed value at all.
-
-Use the `InsertReturning` method on a collection reference to insert an item
-and modify the passed value with fresh values (like IDs or automatic dates)
-from the database.
+If you want to update all the items on a result-set use the `Update` method:
 
 ```go
-book := Book{
-  Title:    "Kokoro",
-  AuthorID: 123,
-}
-err = booksTable.InsertReturning(&book)
+var book Book
+res := booksTable.Find(4267)
 
-// The ID field on the book value should have been updated by now.
-log.Printf("New book: %v", book.ID)
+err = res.One(&book)
+...
+
+err = res.Update(book)
+...
 ```
 
-## Prevent fields from being inserted / updated
-
-If you don't want certain fields to be inserted or updated when their value is
-zero use the `omitempty` tag option:
+Remember that `Update` will operate in the whole result-set. In the example
+above the whole result-set consists of only one element, while in the example
+below the result-set consists of all the items in the collection:
 
 ```go
-type Book struct {
-	ID        uint   `db:"id,omitempty"`
+res := booksTable.Find()
 
-	AuthorID  uint   `db:"author_id,omitempty"`
-	SubjectID uint   `db:"subject_id,omitempty"`
-}
+err := res.Update(map[string]int{
+  "author_id": 23,
+})
 ```
 
-With `omitempty`, the `id`, `author_id` and `subject_id` fields will be omitted
-from queries when their values are equal to the zero value of their type.
+As with `Update`, you can delete all items on the result set by using `Delete`:
 
+```go
+res := booksTable.Find(4267)
+
+err := res.Delete()
+// ...
+```
+
+The example above affects one item, and the example below will delete all items
+in the books table:
+
+
+```go
+res := booksTable.Find()
+
+err := res.Delete()
+...
+```

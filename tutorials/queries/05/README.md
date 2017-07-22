@@ -1,49 +1,39 @@
-# Updating or deleting items on a result set
+# Debugging
 
-Besides querying for data, result-sets can also be used for updating or
-deleting all matching items.
-
-If you want to update all the items on a result-set use the `Update` method:
-
-```go
-var book Book
-res := booksTable.Find(4267)
-
-err = res.One(&book)
-...
-
-err = res.Update(book)
-...
-```
-
-Remember that `Update` will operate in the whole result-set. In the example
-above the whole result-set consists of only one element, while in the example
-below the result-set consists of all the items in the collection:
-
-```go
-res := booksTable.Find()
-
-err := res.Update(map[string]int{
-  "author_id": 23,
-})
-```
-
-As with `Update`, you can delete all items on the result set by using `Delete`:
-
-```go
-res := booksTable.Find(4267)
-
-err := res.Delete()
-// ...
-```
-
-The example above affects one item, and the example below will delete all items
-in the books table:
+Logging is pretty useful when debugging a query. To enable on-screen logging
+use:
 
 
 ```go
-res := booksTable.Find()
-
-err := res.Delete()
-...
+sess.SetLogging(true)
 ```
+
+When logging is enabled, upper-db will print queries to `stdout`. Please keep
+in mind that logging is slow and verbose, make sure to disable it on
+production:
+
+```go
+sess.SetLogging(false)
+```
+
+## Error handling
+
+The `db.ErrNoMoreRows` error is returned by `One` or `All` when the result-set
+has zero items.
+
+```go
+// If this table has an integer primary key you can pass an int to Find and
+// Find will look for the element that matches that primary key.
+err = booksTable.Find(1).One(&book)
+if err != nil {
+  if err == db.ErrNoMoreRows {
+    // This was expected, let's create a new element.
+  } else {
+    // Something else happened!
+    return err
+  }
+}
+```
+
+Depending on your application this error may or may not be fatal, make sure
+you're handling it properly.
