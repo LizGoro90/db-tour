@@ -2,7 +2,7 @@
 
 Welcome to the [upper-db][1] tour.
 
-Here you'll learn how to use [upper-db][1] in your project.
+Here you'll learn how to use [upper-db][1] in your project and work with both SQL and NoSQL databases.
 
 The tour is interactive, you can click the "Run" button on the right panel to
 see the program's output. Feel free to edit the code and run it again.
