@@ -17,15 +17,11 @@ var settings = postgresql.ConnectionURL{
 // accompanying the item represent the columns in the table and are
 // mapped to Go values below.
 type Book struct {
-	// Map the "id" column to the ID field. Only exported
-	// fields can be mapped to database columns.
+	// upper-db will convert Go types into database-specific types
+	// and vice versa, as shown in the "books" table on the left.
 	ID uint `db:"id"`
-	// The "title" column is a VARCHAR type, upper-db converts
-	// Go types into database-specific types and vice versa.
 	Title string `db:"title"`
-	// The "author_id" column is an integer type.
 	AuthorID uint `db:"author_id"`
-	// The "subject_id" column is an integer type.
 	SubjectID uint `db:"subject_id"`
 }
 
