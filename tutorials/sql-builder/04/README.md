@@ -1,4 +1,4 @@
-# Using raw SQL
+## b) Raw SQL
 
 The [SQLBuilder][1] interface provides the `Query`, `QueryRow` and `Exec`
 methods which mimic their counterparts on the `database/sql` API:
