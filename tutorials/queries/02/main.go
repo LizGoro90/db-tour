@@ -82,7 +82,7 @@ func main() {
 	}
 	log.Printf("There are %d items on %q", total, booksTable.Name())
 
-	// We can build new result sets upon old ones.
+	// We can also build new result sets from old ones. 
 	itemsThatBeginWithP := res.And("title LIKE", "P%") // WHERE ... AND title LIKE 'P%'
 
 	// The original result set is not affected.
