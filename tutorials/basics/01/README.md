@@ -2,15 +2,11 @@
 
 ## 1. Get a Database Adapter
 
-
-You can download a database adapter with `go get`:
+To connect to a SQL or NoSQL database, you first need to get an adapter. To download it, use `go get` with the database type you require (`postgresql`, `mysql`, `sqlite`, `ql`, `mssql`, or `mongo`):
 
 ```
 go get -u upper.io/db.v3/postgresql
 ```
-
-Besides `postgresql`, upper-db supports `mysql`, `sqlite`, `ql`, `mssql` and
-`mongo` adapters.
 
 ## Configure a database connection
 
