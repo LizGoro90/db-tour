@@ -70,7 +70,7 @@ var books []Book
 err := q.All(books)
 ```
 
-And if you need absolute control over your query you can always use raw SQL:
+> ... or raw SQL (for absolute control over your query):
 
 ```
 rows, err := sess.Query("SELECT * FROM books")
