@@ -52,9 +52,10 @@ func main() {
 	// We use Find to create a result set (db.Result).
 	res := booksTable.Find()
 
-	// A result set can be modified by chaining any of the
-	// other db.Result methods that return a new db.Result,
-	// like Where, And, OrderBy, Select, Limit and Group.
+	// The result set can be modified by chaining different
+	// db.Result methods (like Where, And, OrderBy, Select
+	// Limit, and Group). These methods will return a new
+	// result set.
 	res = res.OrderBy("-title") // ORDER BY title DESC
 
 	// A result set is lazy and does not build not send query
