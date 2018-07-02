@@ -25,9 +25,9 @@ q := sess.SelectFrom("books")
 q = q.Where("title LIKE ?", "P%")
 ```
 
-Note that in the example above where reassigning `q`, this is because queries
-are immutable and methods do not affect the caller. For instance, in the
-following example `q` is not affected by `Where`:
+Note that we're reassigning `q` in the last example. This is because queries
+are immutable and methods do not affect the caller, like in the next case (where
+`q` is not affected by `Where`):
 
 ```go
 q := sess.SelectFrom("books")
