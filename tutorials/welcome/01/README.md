@@ -10,7 +10,7 @@ see the output. Feel free to edit the code and run it again.
 Please keep in mind that this tour uses a read-only database in a sandboxed
 environment so writing operations won't work.
 
-If you want to improve anything please do, and submit your pull-request. Tour's
+If you want to improve anything, please do and submit your pull request. Tour's
 code is [here](https://github.com/upper/db-tour).
 
 Have fun ✌️!
