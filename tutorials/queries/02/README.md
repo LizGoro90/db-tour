@@ -1,7 +1,6 @@
 # Build Common Queries
 
-The `db.Database` interface defines a `Collection` method, this method takes
-the name of a collection or a table and returns a value that represents it:
+Up to this point, the `Collection` method has taken the name of a structure in the database and returned a value that satisfies the [db.Collection][1] interface:
 
 ```go
 booksTable := sess.Collection("books")
