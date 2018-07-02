@@ -40,8 +40,7 @@ func main() {
 		log.Println("nonexistent_table: ", err)
 	}
 
-	// If you must check for table existence use the Exists
-	// method.
+	// Use Exists if you must check for table existence.
 	if !nonexistentTable.Exists() {
 		log.Println("The nonexistent_table does not exist.")
 	}
