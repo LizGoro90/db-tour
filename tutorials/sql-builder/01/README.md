@@ -69,8 +69,6 @@ if err := iter.Close(); err != nil {
 }
 ```
 
-Once you're done with the iterator remember to check for any errors with `Err`
-and to free any locked resources with `Close`.
 
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder
 [2]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector
