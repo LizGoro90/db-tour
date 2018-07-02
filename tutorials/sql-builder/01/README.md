@@ -43,7 +43,7 @@ var books []Book
 err := q.All(&books)
 ```
 
-Or
+or
 
 ```go
 var book Book
