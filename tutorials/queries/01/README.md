@@ -48,6 +48,8 @@ type Book struct {
 ![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
 > Use the `db:"-"` tag for exported fields that are not to be mapped.
 
+In the event the table contains a column configured to insert automatically-generated values like IDs, serials, dates, etc. if they're not included in a query, the
+`omitempty` option will have to be added to the `db` tag:
 
 ```go
 type Book struct {
