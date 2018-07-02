@@ -42,7 +42,8 @@ type Book struct {
 > Fields and columns must be similar in type (upper-db will handle most conversions
 > automatically).
 
-* Fields must be exported, not exported fields will be ignored.
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> Fields must exported, otherwise they will be ignored.
 
 Some databases can be configured to insert automatically-generated values like
 IDs, serials, dates or other values if they're not present on a query. If the
