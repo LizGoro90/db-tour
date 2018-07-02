@@ -26,8 +26,7 @@ Note that the `ConnectionURL` (which satisfies the [db.ConnectionURL][1] interfa
 
 ## 3. Attempt to Establish a Connection
 
-All adapters have an [Open][2] function that accepts a `db.ConnectionURL`
-value, like the adapter's own `ConnectionURL` we created on the previous step:
+Use the `Open` function including the `db.ConnectionURL` value we defined in the previous step: 
 
 ```go
 sess, err := postgresql.Open(settings)
