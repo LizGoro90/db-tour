@@ -66,8 +66,7 @@ func main() {
 	if err := iter.Err(); err != nil {
 		log.Fatal("iter.Err: ", err)
 	}
-	// An iterator must be closed to free up related
-	// resources.
+	// ... and to free up any locked resources.
 	if err := iter.Close(); err != nil {
 		log.Fatal("iter.Close: ", err)
 	}
