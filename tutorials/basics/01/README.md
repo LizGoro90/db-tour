@@ -34,6 +34,8 @@ sess, err := postgresql.Open(settings)
 ```
 
 ## 4. Set the Connection to Close
+
+Set the database connection to close automatically after completing all tasks. Use `Close` and defer:
 ```
 defer sess.Close()
 ```
