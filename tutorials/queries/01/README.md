@@ -7,7 +7,7 @@ following columns:
 ```sql
 CREATE TABLE "books" (
 	"id" INTEGER NOT NULL,
-	"title" TEXT NOT NULL,
+	"title" VARCHAR NOT NULL,
 	"author_id" INTEGER,
 	"subject_id" INTEGER,
 	CONSTRAINT "books_id_pkey" PRIMARY KEY ("id")
