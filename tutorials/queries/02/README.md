@@ -36,7 +36,7 @@ res = res.OrderBy("-title")
 err := res.All(&books)
 ```
 
-If you only want one element from the set, use `One` instead of `All`:
+... or use `One` instead of `All` if you want to retrieve a single item from the set:
 
 ```go
 import "upper.io/db.v3"
