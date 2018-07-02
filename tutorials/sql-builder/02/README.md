@@ -43,6 +43,9 @@ type BookAuthorSubject struct {
 
 Use the `All` method on the query to dump all its results into the `books`
 slice.
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> An alias exists only for the duration of the query. 
+
 
 ```go
 var books []BookAuthorSubject
