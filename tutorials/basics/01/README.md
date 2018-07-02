@@ -1,6 +1,5 @@
 # Connect to a Database
 
-On this tutorial you'll learn how to get an adapter and connect to a database.
 
 ## Get a database adapter
 
