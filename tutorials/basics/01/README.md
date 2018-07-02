@@ -8,7 +8,7 @@ To connect to a SQL or NoSQL database, you first need to get an adapter. To down
 go get -u upper.io/db.v3/postgresql
 ```
 
-## Configure a database connection
+## 2. Configure a Database Connection
 
 Configure the adapter's `ConnectionURL` using your credentials.
 
