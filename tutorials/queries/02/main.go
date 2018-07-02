@@ -45,8 +45,8 @@ func main() {
 		log.Println("The nonexistent_table does not exist.")
 	}
 
-	// The "books" table is one of the tables that already
-	// exists on our test database.
+	// "Books" is a table that already exists in our test
+	// database.
 	booksTable := sess.Collection("books")
 
 	// Use Find on a collection to create a db.Result result
