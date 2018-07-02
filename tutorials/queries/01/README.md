@@ -26,8 +26,8 @@ type Book struct {
 }
 ```
 
-Use the `db` field tag to tell upper-db which database columns
-correspond to specific struct fields:
+The `db` field tag will then be required so upper-db can identify the columns
+mapped to the struct:
 
 ```go
 type Book struct {
