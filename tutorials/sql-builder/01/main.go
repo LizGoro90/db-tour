@@ -28,7 +28,6 @@ func main() {
 	}
 	defer sess.Close()
 
-	sess.SetLogging(true)
 
 	// The Collection / Find / Result syntax was created with
 	// compatibility across all supported databases in mind.
