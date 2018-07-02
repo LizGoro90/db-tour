@@ -10,9 +10,6 @@ rows, err := sess.Query(`SELECT id, first_name, last_name FROM authors WHERE las
 
 row, err := sess.QueryRow(`SELECT * FROM authors WHERE id = ?`, 23)
 ...
-
-res, err := sess.Exec(`UPDATE authors SET first_name = ? WHERE id = ?`, "Edgar Allan", eaPoe.ID)
-...
 ```
 
 Use raw SQL whenever you feel like you need it. Using SQL does not mean you'll
