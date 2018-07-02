@@ -9,7 +9,8 @@ col := sess.Collection("books")
 
 A collection reference satisfies [db.Collection][2].
 
-`Name` and `Exists` are two methods defined by `db.Collection`.
+There are different methods you can call on the reference, like `Name` and `Exists`, 
+which are handy for knowing whether a collection exists or not:
 
 ```go
 log.Println("Collection:", col.Name(), "Exists?:", col.Exists())
