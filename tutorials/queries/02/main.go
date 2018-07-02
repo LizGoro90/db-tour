@@ -58,9 +58,10 @@ func main() {
 	// result set.
 	res = res.OrderBy("-title") // ORDER BY title DESC
 
-	// A result set is lazy and does not build not send query
-	// to the database until you use one of the methods that
-	// require interaction with the database. Like One or All.
+	// The result set is lazy, meaning that the query will
+	// be built or sent to the database until one of the 
+	// methods that require database interaction is used (for
+	// example, One or All).
 	var books []Book
 	if err := res.All(&books); err != nil {
 		log.Fatal(err)
