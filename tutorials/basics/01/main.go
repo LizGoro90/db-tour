@@ -3,10 +3,8 @@ package main
 import (
 	"log"
 
-	// In this example we're going to connect to a PostgreSQL
-	// database, for this we need to import the postgresql
-	// adapter.  If you want to try with another DBMS, change
-	// the adapter name and provide valid connection settings.
+	// In this example, we're going to connect to a PostgreSQL
+	// database.
 	"upper.io/db.v3/postgresql"
 )
 
