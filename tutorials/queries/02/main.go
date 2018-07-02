@@ -28,11 +28,6 @@ func main() {
 	}
 	defer sess.Close()
 
-	// The SetLogging method enables or disables logging to
-	// stdout, use logging to see the queries upper-db builds
-	// and how much time they take.
-	sess.SetLogging(false) // Set to true to enable logging.
-
 	// The Collection method points to a database collection
 	// (or table). See
 	// https://godoc.org/upper.io/db.v3#Collection for a list
