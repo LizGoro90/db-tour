@@ -18,7 +18,7 @@ q := sess.SelectFrom("books").
   Where("title LIKE ?", "P%")
 ```
 
-Or
+or
 
 ```go
 q := sess.SelectFrom("books")
