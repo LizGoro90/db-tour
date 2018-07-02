@@ -60,6 +60,9 @@ total, err := res.Count()
 There are many options for you to define queries depending on your database type. Take
 a look [here](https://upper.io/db.v3/getting-started#defining-a-result-set-with-code-find-code).
 
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> In the particular case of SQL databases, you can also choose to use a query builder 
+> (for more control over your query):
 ```go
 q, err := sess.Select().From("books")
 
