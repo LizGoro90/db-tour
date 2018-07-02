@@ -34,17 +34,4 @@ func main() {
 
 	booksTable := sess.Collection("books")
 
-	res := booksTable.Find().OrderBy("id")
-
-	var books []Book
-	if err := res.All(&books); err != nil {
-		log.Fatal(err)
-	}
-
-	// The All method dumps all the items in the result set
-	// into a Go slice.
-	log.Printf("Items in %q table:\n", booksTable.Name())
-	for _, book := range books {
-		log.Printf("Item %d:\t%q\n", book.ID, book.Title)
-	}
 }
