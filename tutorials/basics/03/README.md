@@ -1,4 +1,4 @@
-# Create a table/collection reference
+# Create a Table/Collection Reference
 
 `Collection` is one of the methods defined by [db.Database][1]. This
 method can be used to create a collection reference.
