@@ -6,7 +6,6 @@ Up to this point, the `Collection` method has taken the name of a structure in t
 booksTable := sess.Collection("books")
 ```
 
-this value satisfies the [db.Collection][1] interface.
 
 One of the methods defined by `db.Collection` is `Find`. With `Find` you can
 create a result-set of type [db.Result][2].
