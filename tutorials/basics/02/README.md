@@ -20,4 +20,3 @@ log.Printf("Collections in %q: %v", sess.Name(), collections)
 
 [2]: https://godoc.org/upper.io/db.v3#Database
 [3]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Database
-[4]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Open
