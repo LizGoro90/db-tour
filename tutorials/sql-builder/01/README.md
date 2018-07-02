@@ -1,7 +1,7 @@
 ## a) SQL Builder
 
-All of the adapters for SQL databases come with a handy SQL builder that you
-can use to compose SQL queries.
+All the adapters for SQL databases come with a handy builder that you
+can use to compose queries, as defined [here](https://upper.io/db.v3/lib/sqlbuilder).
 
 You can use any of the [SQLBuilder][1] methods to begin your query, for
 instance `SelectFrom`:
