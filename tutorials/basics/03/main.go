@@ -20,8 +20,9 @@ func main() {
 	}
 	defer sess.Close()
 
-	// The Collection method returns a collection reference
-	col := sess.Collection("books")
+	// The Collection method returns a reference to a specific database
+	// structure. In this case, the structure is a table named "books".
+    col := sess.Collection("books")
 
 	// You can use any of the methods defined on
 	// https://godoc.org/upper.io/db.v3#Collection on this
