@@ -13,6 +13,10 @@ log.Printf("Collections in %q: %v", sess.Name(), collections)
 > In light of this, the structures of both database types are referred to generally as
 > 'collections' and no particular distinction is made between 'tables' and 'collections'.
 
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> You can call different db.Database methods depending on the database type. For example, 
+> if you're working with a SQL database, `sess` will also satisfy [sqlbuilder.Database][3].
+
 
 [1]: https://godoc.org/upper.io/db.v3#ConnectionURL
 [2]: https://godoc.org/upper.io/db.v3#Database
