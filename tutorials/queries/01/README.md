@@ -14,8 +14,8 @@ CREATE TABLE "books" (
 );
 ```
 
-Create a `Book` struct to represent one element from that table and add fields
-representing columns:
+In this case, we need to create a `Book` struct that represents an item from such
+table and the fields accompanying it:
 
 ```go
 type Book struct {
