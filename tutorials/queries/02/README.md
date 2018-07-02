@@ -15,8 +15,8 @@ zero, one, or many items.)
 < Common Result-Oriented Syntax (CROS) and comes in handy when you want to query
 < a collection or a table.
 
-collection or table. For instace, this is how a CROS query that fetches and
-maps all the books in the "books" table looks:
+For instance, the following is a CROS query that fetches and
+maps all the items in the "books" table:
 
 ```go
 var books []Book
