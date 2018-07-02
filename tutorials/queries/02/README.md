@@ -57,9 +57,8 @@ res := booksTable.Find()
 total, err := res.Count()
 ```
 
-This is not the only way to query for data, depending on your database you may
-have other querying APIs, for instance, SQL databases also provide a query
-builder for when you need to have more control over the details of your query:
+There are many options for you to define queries depending on your database type. Take
+a look [here](https://upper.io/db.v3/getting-started#defining-a-result-set-with-code-find-code).
 
 ```go
 q, err := sess.Select().From("books")
