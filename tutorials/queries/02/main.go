@@ -28,10 +28,9 @@ func main() {
 	}
 	defer sess.Close()
 
-	// The Collection method points to a database collection
-	// (or table). See
-	// https://godoc.org/upper.io/db.v3#Collection for a list
-	// of all available methods on a collection.
+
+	// We've pointed to a database structure (a table, in this
+	// case) through a collection reference.
 	nonexistentTable := sess.Collection("nonexistent_table")
 
 	// If the DBMS you're working with does not allow to use
