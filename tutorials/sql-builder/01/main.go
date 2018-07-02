@@ -29,16 +29,13 @@ func main() {
 	defer sess.Close()
 
 
-	// The Collection / Find / Result syntax was created with
-	// compatibility across all supported databases in mind.
-	// Sometimes that won't be enough for all your needs. If
-	// that's your case, you can also use the SQL builder or
-	// even raw SQL depending on how complex your query is.
-	//
-	// The SQLBuilder is defined in the
-	// upper.io/db.v3/lib/sqlbuilder package, you can see all
-	// its available methods on
-	// https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder.
+	// The Collection / Find / Result syntax explained above
+	// was created with compatibility across all supported 
+	// databases in mind. However, sometimes it might not be
+	// enough for all your needs, especially when working 
+	// with complex queries.
+	
+	// In such a case, you can also use SQLBuilder. 
 	q := sess.SelectFrom("books")
 
 	// q is a sqlbuilder.Selector, you can chain any of its
