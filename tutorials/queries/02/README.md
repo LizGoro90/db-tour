@@ -25,7 +25,7 @@ res := booksTable.Find()
 err := res.All(&books)
 ```
 
-This is the same query sorted by title (descending order):
+You can build the query to return items in different ways, such as sorted by title (descending order):
 
 ```go
 var books []Book
