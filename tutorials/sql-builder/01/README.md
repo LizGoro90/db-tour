@@ -50,8 +50,8 @@ var book Book
 err := q.All(&book)
 ```
 
-The `Selector` interface also provides an special `Iterator` method that you
-can use to create an iterator and query over results one by one:
+The `Selector` interface also features a special `Iterator` method to create 
+an iterator and go through results one by one:
 
 ```go
 iter := q.Iterator()
