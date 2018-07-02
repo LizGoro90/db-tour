@@ -35,8 +35,8 @@ p := q.Where("title LIKE ?", "P%").
   OrderBy("title")
 ```
 
-Use the `All` or `One` methods on a query to compile, execute and map its
-results into a Go type:
+You can use `All` or `One` to compile, execute, and map results into
+a Go type:
 
 ```go
 var books []Book
