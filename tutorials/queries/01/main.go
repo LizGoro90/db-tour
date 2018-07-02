@@ -13,8 +13,9 @@ var settings = postgresql.ConnectionURL{
 	Password: `demop4ss`,
 }
 
-// Book represents an item from the "books" table, column
-// names are mapped to Go values.
+// The struct represents an item of the "books" table. The fields 
+// accompanying the item represent the columns in the table and are
+// mapped to Go values below.
 type Book struct {
 	// Map the "id" column to the ID field. Only exported
 	// fields can be mapped to database columns.
