@@ -18,7 +18,6 @@ log.Printf("Collections in %q: %v", sess.Name(), collections)
 > if you're working with a SQL database, `sess` will also satisfy [sqlbuilder.Database][3].
 
 
-[1]: https://godoc.org/upper.io/db.v3#ConnectionURL
 [2]: https://godoc.org/upper.io/db.v3#Database
 [3]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Database
 [4]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Open
