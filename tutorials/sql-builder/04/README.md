@@ -23,8 +23,7 @@ var books []Book
 err := iter.All(&books)
 ```
 
-This iterator provides well-known upper-db methods like `One`, `All` and
-`Next`. As with other iterators, if you're using `Next`, remember to use `Err`
-and `Close` too.
+This iterator provides well-known upper-db methods like `One`, `All`, and
+`Next`.
 
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder
