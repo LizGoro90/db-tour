@@ -27,9 +27,9 @@ q := sess.Select("b.id AS book_id", "*").
   OrderBy("a.last_name", "b.title")
 ```
 
-Note that we're creating an alias for `book_id` with `Select("b.id AS book_id",
-"*")`, this is because all three embedded structs have an ambiguous `id` field.
-Our final `BookAuthorSubject` struct should look like this:
+Note that an alias for `book_id` is created with `Select("b.id AS book_id","*")`. 
+This is because all three embedded structs have a field with the same name (`id`),
+which is ambiguous. The final struct (`BookAuthorSubject`) should look like this:
 
 ```go
 type BookAuthorSubject struct {
