@@ -71,8 +71,6 @@ func main() {
 	}
 	defer sess.Close()
 
-	sess.SetLogging(true)
-
 	// The BookAuthorSubject type represents an element that
 	// has columns from different tables.
 	type BookAuthorSubject struct {
