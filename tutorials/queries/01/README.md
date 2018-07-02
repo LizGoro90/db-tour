@@ -1,6 +1,8 @@
 # Map Columns to Struct Fields
 
-Let's suppose we have a table like this:
+Once we get the collections/tables in the database, we'll map them to structs. For 
+example, the 'books' table we referred to in the previous step consists of the 
+following columns:
 
 ```sql
 CREATE TABLE "books" (
