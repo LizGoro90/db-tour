@@ -85,7 +85,7 @@ func main() {
 	// We can also build new result sets from old ones. 
 	itemsThatBeginWithP := res.And("title LIKE", "P%") // WHERE ... AND title LIKE 'P%'
 
-	// The original result set is not affected.
+	// The old result set is not altered,
 	total1, err := res.Count()
 	if err != nil {
 		log.Fatal("Count: ", err)
