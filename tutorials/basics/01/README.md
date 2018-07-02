@@ -10,7 +10,7 @@ go get -u upper.io/db.v3/postgresql
 
 ## 2. Configure a Database Connection
 
-Configure the adapter's `ConnectionURL` using your credentials.
+Set the `ConnectionURL` using your credentials:
 
 ```go
 var settings = postgresql.ConnectionURL{
