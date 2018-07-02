@@ -6,9 +6,10 @@ Up to this point, the `Collection` method has taken the name of a structure in t
 booksTable := sess.Collection("books")
 ```
 
+Now we'll use `Find` to search for specific objects within the hierarchy. The object
+returned will be a [db.Result][2] (which begins with a condition and can contain 
+zero, one, or many items.)
 
-One of the methods defined by `db.Collection` is `Find`. With `Find` you can
-create a result-set of type [db.Result][2].
 
 Result-sets begin with a condition and they can contain zero, one or many
 items.
