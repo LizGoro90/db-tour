@@ -10,11 +10,11 @@ Now we'll use `Find` to search for specific objects within the hierarchy. The ob
 returned will be a [db.Result][2] (which begins with a condition and can contain 
 zero, one, or many items.)
 
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+< The `db.Result` API works the same on all supported databases, this is known as
+< Common Result-Oriented Syntax (CROS) and comes in handy when you want to query
+< a collection or a table.
 
-The `db.Result` API works the same on all supported databases, this is known as
-Common Result-Oriented Syntax or CROS.
-
-CROS is pretty useful when you want to operate on a specific set of items on a
 collection or table. For instace, this is how a CROS query that fetches and
 maps all the books in the "books" table looks:
 
