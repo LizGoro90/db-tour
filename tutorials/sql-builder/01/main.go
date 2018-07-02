@@ -39,8 +39,7 @@ func main() {
 	q := sess.SelectFrom("books")
 
 	// q is a sqlbuilder.Selector, you can chain any of its
-	// other methods that return the same type. See
-	// https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector
+	// other methods that also return Selector. 
 	q = q.OrderBy("title")
 
 	// Remember that queries are immutable, here p is a
