@@ -1,4 +1,4 @@
-# How to list all tables/collections in a database
+# List All Tables/Collections in a Database
 
 The `sess` variable returned by `Open` satisfies the [db.Database][2]
 interface. If you're working with a SQL database, `sess` will satisfy
