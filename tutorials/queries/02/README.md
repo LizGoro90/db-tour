@@ -48,7 +48,7 @@ res := booksTable.Find(db.Cond{"id": 4})
 err := res.One(&book)
 ```
 
-To count all elements on the result-set use `Count`:
+You can also determine the total number of items in the result-set with `Count`:
 
 
 ```go
