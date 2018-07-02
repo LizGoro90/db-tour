@@ -4,8 +4,9 @@ Now let's suppose you have independent Go structs (each one mapped to a differen
 table) and a JOIN query that returns a result combining columns from all the 
 mapped tables.
 
-Create a new struct and embed all those structs using the `inline` option
-(`db:",inline"`) like this:
+In this scenario, you can create a new struct and embed all the structs using the
+`inline` option (`db:",inline"`), like in the following example (where `Book`,
+`Author`, and `Subject` are independent structs):
 
 ```go
 type BookAuthorSubject struct {
