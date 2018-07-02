@@ -63,6 +63,8 @@ a look [here](https://upper.io/db.v3/getting-started#defining-a-result-set-with-
 ![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
 > In the particular case of SQL databases, you can also choose to use a query builder 
 > (for more control over your query):
+
+
 ```go
 q, err := sess.Select().From("books")
 
