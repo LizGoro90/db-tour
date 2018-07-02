@@ -53,8 +53,8 @@ func main() {
 		log.Fatal("q.All: ", err)
 	}
 
-	// The Iterator method is a way to iterator over large
-	// sets of results one by one.
+	// The Iterator method is a way to go through large
+	// result sets from top to bottom. 
 	booksP = make([]Book, 0, len(booksQ))
 	iter := p.Iterator()
 	var book Book
