@@ -78,5 +78,10 @@ rows, err := sess.Query("SELECT * FROM books")
 ```
 
 Given that the example in this tour is based on a SQL database, we'll elaborate hereunder on the use of both a) the SQL builder and b) raw SQL.
+
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> If you're working with a NoSQL database, refer to next page to continue learning about 
+> querying.
+
 [1]: https://godoc.org/upper.io/db.v3#Collection
 [2]: https://godoc.org/upper.io/db.v3#Result
