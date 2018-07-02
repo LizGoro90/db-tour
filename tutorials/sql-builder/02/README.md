@@ -1,4 +1,4 @@
-# JOIN queries and struct composition
+### JOIN Queries and Struct Composition
 
 Let's suppose you have a few independent Go structs `Book`, `Author` and
 `Subject`, each one mapped to a table, and that you have a JOIN query that
