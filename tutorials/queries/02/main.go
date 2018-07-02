@@ -74,8 +74,8 @@ func main() {
 		log.Printf("Item %d:\t%q\n", book.ID, book.Title)
 	}
 
-	// A result set can be reused many times, here we're
-	// counting all the items in the result set.
+	// The result set can be reused many times. We're now going 
+	// to count all the items in the result set.
 	total, err := res.Count()
 	if err != nil {
 		log.Fatal("Count: ", err)
