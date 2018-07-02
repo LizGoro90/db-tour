@@ -38,10 +38,10 @@ type Book struct {
 }
 ```
 
-Please keep in mind that:
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> Fields and columns must be similar in type (upper-db will handle most conversions
+> automatically).
 
-* Fields and columns must be of a similar type, upper-db will handle most
-	conversions automatically.
 * Fields must be exported, not exported fields will be ignored.
 
 Some databases can be configured to insert automatically-generated values like
