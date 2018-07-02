@@ -12,10 +12,9 @@ row, err := sess.QueryRow(`SELECT * FROM authors WHERE id = ?`, 23)
 ...
 ```
 
-Use raw SQL whenever you feel like you need it. Using SQL does not mean you'll
-have to map Go fields by hand, you can import the
-`upper.io/db.v3/lib/sqlbuilder` package and use the `sqlbuilder.NewIterator`
-function to make that task easier:
+Using raw SQL does not mean you'll have to map Go fields manually. You can import the
+`upper.io/db.v3/lib/sqlbuilder` package and use the `sqlbuilder.NewIterator` function
+so mapping is easier:
 
 ```go
 iter := sqlbuilder.NewIterator(rows)
