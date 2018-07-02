@@ -1,4 +1,4 @@
-# Mapping columns to struct fields
+# Map Columns to Struct Fields
 
 Let's suppose we have a table like this:
 
