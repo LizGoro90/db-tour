@@ -23,10 +23,8 @@ var settings = postgresql.ConnectionURL{
 
 Note that the `ConnectionURL` (which satisfies the [db.ConnectionURL][1] interface) varies from one database type to another. The connection properties required by each adapter are explained in detail [here](https://upper.io/db.v3/adapters).
 
-## Use the `Open` function to attempt to establish a connection
 
-Use the adapter's `Open` function to attempt to establish a connection with the
-database.
+## 3. Attempt to Establish a Connection
 
 All adapters have an [Open][2] function that accepts a `db.ConnectionURL`
 value, like the adapter's own `ConnectionURL` we created on the previous step:
