@@ -67,8 +67,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// The All method dumps all the items in the result set
-	// into a Go slice.
+	// The All method copies every single item in the result
+	// set into a Go slice.
 	log.Printf("Items in %q table:\n", booksTable.Name())
 	for _, book := range books {
 		log.Printf("Item %d:\t%q\n", book.ID, book.Title)
