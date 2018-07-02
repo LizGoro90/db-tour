@@ -24,8 +24,7 @@ func main() {
 	// structure. In this case, the structure is a table named "books".
     col := sess.Collection("books")
 
-	// You can use any of the methods defined on
-	// https://godoc.org/upper.io/db.v3#Collection on this
-	// collection reference.
+	// Name and Exists are among the different methods we can call. We'll
+	// use them to know if a given structure is included in the database.
 	log.Println("Collection:", col.Name(), "Exists?:", col.Exists())
 }
