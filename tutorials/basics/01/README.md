@@ -1,7 +1,7 @@
 # Connect to a Database
 
+## 1. Get a Database Adapter
 
-## Get a database adapter
 
 You can download a database adapter with `go get`:
 
