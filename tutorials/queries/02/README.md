@@ -11,9 +11,6 @@ returned will be a [db.Result][2] (which begins with a condition and can contain
 zero, one, or many items.)
 
 
-Result-sets begin with a condition and they can contain zero, one or many
-items.
-
 The `db.Result` API works the same on all supported databases, this is known as
 Common Result-Oriented Syntax or CROS.
 
