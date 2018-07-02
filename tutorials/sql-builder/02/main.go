@@ -14,6 +14,17 @@ var settings = postgresql.ConnectionURL{
 }
 
 // Book represents an item from the "books" table.
+// booktown=> \d books
+//       Table "public.books"
+//    Column   |  Type   | Modifiers
+// ------------+---------+-----------
+//  id         | integer | not null
+//  title      | varchar | not null
+//  author_id  | integer |
+//  subject_id | integer |
+// Indexes:
+//     "books_id_pkey" PRIMARY KEY, btree (id)
+//     "books_title_idx" btree (title)
 type Book struct {
 	ID        uint   `db:"id,omitempty"`
 	Title     string `db:"title"`
