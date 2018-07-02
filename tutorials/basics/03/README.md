@@ -1,7 +1,7 @@
 # Create a Table/Collection Reference
 
-`Collection` is one of the methods defined by [db.Database][1]. This
-method can be used to create a collection reference.
+Use `Collection` (also defined by [db.Database][1]) to get a database
+structure in particular:
 
 ```go
 col := sess.Collection("books")
