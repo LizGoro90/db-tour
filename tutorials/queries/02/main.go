@@ -13,8 +13,7 @@ var settings = postgresql.ConnectionURL{
 	Password: `demop4ss`,
 }
 
-// Book represents an item from the "books" table, column
-// names are mapped to Go values.
+
 type Book struct {
 	ID        uint   `db:"id"`
 	Title     string `db:"title"`
