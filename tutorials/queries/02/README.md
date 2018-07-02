@@ -77,5 +77,6 @@ rows, err := sess.Query("SELECT * FROM books")
 // rows is a regular *sql.Rows object.
 ```
 
+Given that the example in this tour is based on a SQL database, we'll elaborate hereunder on the use of both a) the SQL builder and b) raw SQL.
 [1]: https://godoc.org/upper.io/db.v3#Collection
 [2]: https://godoc.org/upper.io/db.v3#Result
