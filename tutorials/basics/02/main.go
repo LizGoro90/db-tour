@@ -32,8 +32,7 @@ func main() {
 		log.Fatal("Collections: ", err)
 	}
 
-	// The Name method is also part of the db.Database
-	// interface and returns the name of the database you're
-	// connected to.
+	// Name is one of the different methods we can call. 
+	// We'll use it to retrieve the database name.
 	log.Printf("Collections in %q: %v", sess.Name(), collections)
 }
