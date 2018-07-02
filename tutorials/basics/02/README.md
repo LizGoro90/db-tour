@@ -1,11 +1,6 @@
 # List All Tables/Collections in a Database
 
-The `sess` variable returned by `Open` satisfies the [db.Database][2]
-interface. If you're working with a SQL database, `sess` will satisfy
-[sqlbuilder.Database][3] as well.
-
-Use the `Collection` method (defined by [db.Database][2]) to get the names of
-all the collections in the database:
+Once `Open` returns a `sess`variable (which satisfies the [db.Database][2] interface), use the `Collections` method to get all the structures in the database: 
 
 ```go
 collections, err := sess.Collections()
