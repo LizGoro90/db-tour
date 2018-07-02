@@ -85,7 +85,7 @@ func main() {
 
 	// This is a query with a JOIN clause that was built using
 	// the SQL builder.
-	q := sess.Select("b.id AS book_id", "*"). // Note how we set an alias for book.id.
+	q := sess.Select("b.id AS book_id", "*"). // Note the alias set for book.id.
 							From("books AS b").
 							Join("subjects AS s").On("b.subject_id = s.id").
 							Join("authors AS a").On("b.author_id = a.id").
