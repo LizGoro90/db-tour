@@ -45,10 +45,6 @@ type Book struct {
 ![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
 > Fields must exported, otherwise they will be ignored.
 
-Some databases can be configured to insert automatically-generated values like
-IDs, serials, dates or other values if they're not present on a query. If the
-table you're working with has a column like that, you'll need to add the
-`omitempty` option to its `db` tag:
 ![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
 > Use the `db:"-"` tag for exported fields that are not to be mapped.
 
