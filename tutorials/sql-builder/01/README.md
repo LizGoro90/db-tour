@@ -10,8 +10,8 @@ instance `SelectFrom`:
 q := sess.SelectFrom("books")
 ```
 
-The `SelectFrom` method returns a [Selector][2] and some of the `Selector`
-methods return `Selector` too, so you can chain method calls like this:
+`SelectFrom` returns a [Selector][2] and some `Selector` methods return `Selector` 
+too, so you can chain method calls like this:
 
 ```go
 q := sess.SelectFrom("books").
