@@ -1,8 +1,8 @@
 ### JOIN Queries and Struct Composition
 
-Let's suppose you have a few independent Go structs `Book`, `Author` and
-`Subject`, each one mapped to a table, and that you have a JOIN query that
-returns a combined result with columns from all those tables.
+Now let's suppose you have independent Go structs (each one mapped to a different
+table) and a JOIN query that returns a result combining columns from all the 
+mapped tables.
 
 Create a new struct and embed all those structs using the `inline` option
 (`db:",inline"`) like this:
