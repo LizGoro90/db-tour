@@ -49,9 +49,7 @@ func main() {
 	// database.
 	booksTable := sess.Collection("books")
 
-	// Use Find on a collection to create a db.Result result
-	// set. See https://godoc.org/upper.io/db.v3#Result for
-	// all methods on result sets.
+	// We use Find to create a result set (db.Result).
 	res := booksTable.Find()
 
 	// A result set can be modified by chaining any of the
