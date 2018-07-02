@@ -25,14 +25,8 @@ func main() {
 	// depending on the database you're connecting to.
 	log.Print("Connected to PostgreSQL using the following DSN: ", settings.String())
 
-	// The Collections method returns all the collections
-	// (tables) on a database, this method is part of the
-	// db.Database interface (which provides methods that work
-	// on both SQL and NoSQL databases), since
-	// sqlbuilder.Database is built upon db.Database, you can
-	// call all db.Database methods on a sqlbuilder.Database
-	// too. See https://godoc.org/upper.io/db.v3#Database for
-	// all available db.Database methods.
+	// The Collections method returns all the structures in
+	// the database. In this case, the structures are tables.
 	collections, err := sess.Collections()
 	if err != nil {
 		log.Fatal("Collections: ", err)
