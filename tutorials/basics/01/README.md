@@ -33,7 +33,7 @@ sess, err := postgresql.Open(settings)
 ...
 ```
 
-Remember to close the database when you're no longer using it:
+## 4. Set the Connection to Close
 ```
 defer sess.Close()
 ```
