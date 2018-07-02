@@ -16,7 +16,7 @@ type BookAuthorSubject struct {
 }
 ```
 
-Then build a JOIN query using the query builder:
+... and then create the JOIN query using the builder:
 
 
 ```go
