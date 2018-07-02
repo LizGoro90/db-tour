@@ -7,7 +7,7 @@ Here you'll learn how to use [upper-db][1] in your project and work with both SQ
 The example code on the right is interactive. You can click on Run to
 see the output. Feel free to edit the code and run it again.
 
-Please keep in mind that this tour uses a read-only database on a sandboxed
+Please keep in mind that this tour uses a read-only database in a sandboxed
 environment so writing operations won't work.
 
 If you want to improve anything please do, and submit your pull-request. Tour's
