@@ -91,7 +91,7 @@ func main() {
 		log.Fatal("Count: ", err)
 	}
 
-	// The new result set is the one that was modified.
+	// ... while the new result set is modified. 
 	total2, err := itemsThatBeginWithP.Count()
 	if err != nil {
 		log.Fatal("Count: ", err)
