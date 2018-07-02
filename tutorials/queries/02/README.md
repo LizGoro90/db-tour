@@ -1,4 +1,4 @@
-# Table references and common queries
+# Build Common Queries
 
 The `db.Database` interface defines a `Collection` method, this method takes
 the name of a collection or a table and returns a value that represents it:
