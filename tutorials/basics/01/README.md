@@ -21,12 +21,7 @@ var settings = postgresql.ConnectionURL{
 }
 ```
 
-Not all databases require the same information to connect to or open a
-database, this is why all adapters provide their own `ConnectionURL` type
-(which satisfies the [db.ConnectionURL][1] interface). You can see a
-description of your adapter's particular `ConnectionURL` at
-`https://upper.io/db.v2/[adapter]`, for instance
-[https://upper.io/db.v3/postgresql](https://upper.io/db.v3/postgresql).
+Note that the `ConnectionURL` (which satisfies the [db.ConnectionURL][1] interface) varies from one database type to another. The connection properties required by each adapter are explained in detail [here](https://upper.io/db.v3/adapters).
 
 ## Use the `Open` function to attempt to establish a connection
 
