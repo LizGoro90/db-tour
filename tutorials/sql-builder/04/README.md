@@ -1,7 +1,8 @@
 ## b) Raw SQL
 
-The [SQLBuilder][1] interface provides the `Query`, `QueryRow` and `Exec`
-methods which mimic their counterparts on the `database/sql` API:
+If none of the previous methods described are enough to express your query, you can
+use Raw SQL - specifically `Query`, `QueryRow`, and `Exec`, which are provided by the
+[SQLBuilder][1] interface and mimic their counterparts in the `database/sql` API:
 
 ```go
 rows, err := sess.Query(`SELECT id, first_name, last_name FROM authors WHERE last_name = ?`, "Poe")
