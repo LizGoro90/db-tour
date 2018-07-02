@@ -18,12 +18,9 @@ var settings = postgresql.ConnectionURL{
 }
 
 func main() {
-	// Use the Open function of the adapter to request a
-	// connection to the database.  Open returns a
-	// sqlbuilder.Database type (all SQL adapters do the
-	// same), refer to
-	// https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Database
-	// for all available methods.
+	// We use Open to request the database connection. Open 
+	// returns a sqlbuilder.Database type (all SQL adapters 
+	// do the same).
 	sess, err := postgresql.Open(settings)
 	if err != nil {
 		log.Fatal("Open: ", err)
