@@ -1,4 +1,4 @@
-# The SQL builder
+## a) SQL Builder
 
 All of the adapters for SQL databases come with a handy SQL builder that you
 can use to compose SQL queries.
