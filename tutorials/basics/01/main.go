@@ -8,11 +8,8 @@ import (
 	"upper.io/db.v3/postgresql"
 )
 
-// The postgresql adapter provides a ConnectionURL type,
-// this type has everything you need to establish a
-// connection to a PostgreSQL database.  The
-// postgresql.ConnectionURL type satisfies db.ConnectionURL
-// (https://godoc.org/upper.io/db.v3#ConnectionURL).
+// We set the ConnectionURL type required by PostgreSQL using
+// the reference documentation.
 var settings = postgresql.ConnectionURL{
 	Database: `booktown`,
 	Host:     `demo.upper.io`,
