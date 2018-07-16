@@ -24,7 +24,7 @@ context and receives a ready-to-be-used transaction session `tx`. This `tx`
 value can be used like a regular `sess`, except that any write operation that
 happens on it needs to be either committed or rolled back.
 
-If the passed function returns an error the transaction gets rolled back:
+If the passed function returns an error, the transaction gets rolled back:
 
 ```go
 err := sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
