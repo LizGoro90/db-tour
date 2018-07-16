@@ -22,7 +22,7 @@ var settings = postgresql.ConnectionURL{
 //    Column   |  Type   | Modifiers
 // ------------+---------+-----------
 //  id         | integer | not null
-//  title      | text    | not null
+//  title      | varchar | not null
 //  author_id  | integer |
 //  subject_id | integer |
 // Indexes:
