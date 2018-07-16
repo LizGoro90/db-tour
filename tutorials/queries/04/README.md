@@ -45,7 +45,10 @@ res = res.NextPage(posts[len(posts)-1].ID)
 err = res.All(&posts) 
 ```
 
-### Other commonly used pagination tools
+### Pagination API Tools
+
+To know the total number of entries and pages into which the result set was 
+divided, you can use:
 
 ```go
 res = res.Paginate(23)
