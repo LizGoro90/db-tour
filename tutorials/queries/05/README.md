@@ -15,7 +15,7 @@ This way upper-db will print queries to `stdout`.
 sess.SetLogging(false)
 ```
 
-## Error handling
+# Handle Errors
 
 The `db.ErrNoMoreRows` error is returned by `One` or `All` when the result-set
 has zero items.
