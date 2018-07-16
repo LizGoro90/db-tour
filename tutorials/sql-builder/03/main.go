@@ -56,8 +56,7 @@ func main() {
 	}
 	log.Printf("%#v", eaPoe)
 
-	// The name says "Edgar Allen", let's fit it using
-	// sqlbuilder.Updater:
+	// We use sqlbuilder.Updater to correct the typo in the name "Edgar Allen".
 	res, err := sess.Update("authors").
 		Set("first_name = ?", "Edgar Allan"). // Or Set("first_name", "Edgar Allan").
 		Where("id = ?", eaPoe.ID).            // Or Where("id", eaPoe.ID)
