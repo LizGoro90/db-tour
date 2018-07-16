@@ -53,10 +53,10 @@ q := sess.DeleteFrom("books").
 res, err := q.Exec()
 ```
 
-See the
-[sqlbuilder.SQLBuilder](https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder)
-interface to learn about all available methods that can be used to build or
-execute SQL statements.
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> Take a look at the [sqlbuilder.SQLBuilder](https://godoc.org/upper.io/db.v3/lib/sqlbuilder#SQLBuilder) interface to learn about all available methods for building
+and executing SQL statements.
+
 
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector
 [2]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Updater
