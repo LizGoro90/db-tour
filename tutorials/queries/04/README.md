@@ -32,8 +32,8 @@ fetch thereon:
 
 ```go
 res = sess.Collection("posts").
-  Paginate(20). // 20 results per page
-  Cursor("id") // using id as cursor
+  Paginate(20). 
+  Cursor("id") 
 
 err = res.All(&posts) // First 20 results of the query
 
