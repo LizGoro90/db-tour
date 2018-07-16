@@ -15,7 +15,7 @@ var settings = postgresql.ConnectionURL{
 }
 
 // Book represents an item from the "books" table. This
-// table has a primary key of integer type ("id"):
+// table has an integer primary key ("id"):
 //
 // booktown=> \d books
 //        Table "public.books"
