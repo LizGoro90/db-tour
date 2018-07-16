@@ -84,8 +84,9 @@ func main() {
 	// returns an iterator.
 	iter := sqlbuilder.NewIterator(rows)
 
-	// This iterator provides methods for iterating over data,
-	// such as All, One, Next and friends.
+	// This iterator provides methods for going through data, such
+	// as All, One, Next, and the like. If you use Next, remember 
+	// to use Err and Close too. 
 	var books []Book
 	if err := iter.All(&books); err != nil {
 		log.Fatal("Query: ", err)
