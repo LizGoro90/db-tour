@@ -58,6 +58,7 @@ res, err := q.Exec()
 and executing SQL statements.
 
 
+## b) Raw SQL
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector
 [2]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Updater
 [3]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Inserter
