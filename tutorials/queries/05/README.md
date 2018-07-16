@@ -17,8 +17,11 @@ sess.SetLogging(false)
 
 # Handle Errors
 
-The `db.ErrNoMoreRows` error is returned by `One` or `All` when the result-set
-has zero items.
+Foreseeing solutions that resume execution when it is interrupted due to an
+error is a good practice too. In the case below, where int is passed to Find
+to look for an integer primary key in the "books" table, different error 
+scenarios can be defined. For example, `db.ErrNoMoreRows`, which is returned 
+by `One` or `All` when the result set has zero items.
 
 ```go
 // If this table has an integer primary key you can pass an int to Find and
