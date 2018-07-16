@@ -6,9 +6,10 @@ Logging is pretty useful for finding errors in your code. To enable it, use:
 sess.SetLogging(true)
 ```
 
-When logging is enabled, upper-db will print queries to `stdout`. Please keep
-in mind that logging is slow and verbose, make sure to disable it on
-production:
+This way upper-db will print queries to `stdout`. 
+
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> Make sure to disable logging in production as it is slow and verbose. 
 
 ```go
 sess.SetLogging(false)
