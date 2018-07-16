@@ -35,5 +35,6 @@ if err != nil {
 }
 ```
 
-Depending on your application this error may or may not be fatal, make sure
-you're handling it properly.
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> Error scenarios may or may not be fatal depending on the nature of your
+application, so make sure you're handling them properly. 
