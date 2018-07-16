@@ -54,7 +54,7 @@ func main() {
 		log.Printf("This is OK, this is a restricted sandbox with a read-only database.")
 	}
 
-	// Delete the result set (which only has one element).
+	// The result set is deleted. 
 	if err := res.Delete(); err != nil {
 		log.Printf("Delete: %v\n", err)
 		log.Printf("This is OK, this is a restricted sandbox with a read-only database.")
