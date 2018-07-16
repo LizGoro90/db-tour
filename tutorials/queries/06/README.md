@@ -26,7 +26,7 @@ err := res.Update(map[string]int{
 })
 ```
 
-As with `Update`, you can delete all items on the result set by using `Delete`:
+If you want to remove all the items in a result set, use `Delete`:
 
 ```go
 res := booksTable.Find(4267)
