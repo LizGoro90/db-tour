@@ -3,9 +3,6 @@ package main
 import (
 	"log"
 
-	// The db.v3 package provides utilities for building
-	// generic queries, like the db.Cond type, or error
-	// values.
 	"upper.io/db.v3"
 	"upper.io/db.v3/postgresql"
 )
