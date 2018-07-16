@@ -1,8 +1,6 @@
-# Debugging
+# Debug
 
-Logging is pretty useful when debugging a query. To enable on-screen logging
-use:
-
+Logging is pretty useful for finding errors in your code. To enable it, use:
 
 ```go
 sess.SetLogging(true)
