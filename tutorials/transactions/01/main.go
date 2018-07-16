@@ -56,8 +56,8 @@ func main() {
 	// that if the function returns an error, the transaction will
 	// be rolled back. 
 	err = sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
-		// Anything you do here with the tx value will be part
-		// of the transaction.
+		// Anything you set the tx variable to execute will be part
+		// of the transaction. 
 		cols, err := tx.Collections()
 		if err != nil {
 			return err
