@@ -1,4 +1,4 @@
-# Querying large datasets
+# Query Large Data Sets
 
 Suppose that you have a very large dataset and that mapping all matching items
 into an slice is impractical for memory and performance reasons.
