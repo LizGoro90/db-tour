@@ -51,11 +51,10 @@ func main() {
 	// any context.Context or pass nil instead. 
 	ctx := context.Background()
 
-	// sess.Tx requires a function, this function takes a
-	// single sqlbuilder.Tx argument and returns an error. The
-	// tx value is just like sess, except it lives within a
-	// transaction.  If the function returns any error, the
-	// transaction will be rolled back.
+	// The tx value in the function required by sess.Tx is just
+	// like sess, except it lives within a transaction. This means
+	// that if the function returns an error, the transaction will
+	// be rolled back. 
 	err = sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
 		// Anything you do here with the tx value will be part
 		// of the transaction.
