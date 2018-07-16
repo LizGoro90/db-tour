@@ -25,7 +25,7 @@ err = res.Page(2).All(&posts)
 q = sess.SelectFrom("posts").Paginate(20)
 ```
 
-### Cursor based pagination (both for db.Result and SQL Builder)
+### Cursor-based Pagination 
 
 ```go
 res = sess.Collection("posts").
