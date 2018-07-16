@@ -33,7 +33,7 @@ err := sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
 })
 ```
 
-If the passed function returns `nil`, the transaction gets commited.
+If the passed function returns `nil`, the transaction gets commited:
 
 ```go
 err := sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
