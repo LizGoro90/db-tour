@@ -29,3 +29,5 @@ if err := res.Close(); err != nil {
   ...
 }
 ```
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> Calling `Close` is not required when using `One` or `All`.
