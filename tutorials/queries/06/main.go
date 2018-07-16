@@ -48,7 +48,7 @@ func main() {
 
 	log.Printf("Book (modified): %#v", book)
 
-	// Update the result set (which only has one element).
+	// The result set is updated.
 	if err := res.Update(book); err != nil {
 		log.Printf("Update: %v\n", err)
 		log.Printf("This is OK, this is a restricted sandbox with a read-only database.")
