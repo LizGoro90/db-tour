@@ -14,7 +14,8 @@ res = sess.Collection("posts").Paginate(20)
 // Get first chunk of results (page 1)
 err = res.All(&posts) 
 
-err = res.Page(2).All(&posts) // Results from page 2 (limit 20, offset 40)
+// Get second chunk of results (page 2)(limit 20, offset 40)
+err = res.Page(2).All(&posts) 
 ```
 
 ### Simple pagination for SQL builder
