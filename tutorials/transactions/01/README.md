@@ -17,7 +17,9 @@ err := sess.Tx(ctx, func(tx sqlbuilder.Tx) error {
 ```
 
 The `ctx` value can be used to cancel and rollback a transaction before it
-ends. The transaction function defines what you want to do within a transaction
+ends. 
+
+The transaction function defines what you want to do within a transaction
 context and receives a ready-to-be-used transaction session `tx`. This `tx`
 value can be used like a regular `sess` except that any write operation that
 happens on it needs to be either commited or rolled back.
