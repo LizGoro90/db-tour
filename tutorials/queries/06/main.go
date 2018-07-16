@@ -43,7 +43,7 @@ func main() {
 
 	log.Printf("Book: %#v", book)
 
-	// Change a property.
+	// A change is made to a property.
 	book.Title = "New title"
 
 	log.Printf("Book (modified): %#v", book)
