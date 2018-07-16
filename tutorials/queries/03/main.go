@@ -18,8 +18,8 @@ type Book struct {
 	Title     string `db:"title"`
 	AuthorID  uint   `db:"author_id"`
 	SubjectID uint   `db:"subject_id"`
-	// This is an exported field, but we don't want it to be mapped to a column,
-	// so we set the `db:"-"` tag on it.
+	// Remember that the `db:"-"` tag is used for exported fields we don't want
+	// to map to a column. 
 	OtherField string `db:"-"`
 }
 
