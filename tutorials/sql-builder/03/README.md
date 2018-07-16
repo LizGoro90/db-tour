@@ -67,6 +67,10 @@ Allan", eaPoe.ID)
 
 res, err := sess.Exec(`INSERT INTO authors VALUES`) 
 ...
+
+res, err := sess.Exec(`DELETE authors WHERE id = ?`, "Edgar Allan", eaPoe.ID)
+```
+
 [1]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Selector
 [2]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Updater
 [3]: https://godoc.org/upper.io/db.v3/lib/sqlbuilder#Inserter
