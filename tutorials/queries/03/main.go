@@ -13,7 +13,6 @@ var settings = postgresql.ConnectionURL{
 	Password: `demop4ss`,
 }
 
-// Book represents an item from the "books" table.
 type Book struct {
 	ID        uint   `db:"id"`
 	Title     string `db:"title"`
