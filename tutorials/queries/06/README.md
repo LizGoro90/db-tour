@@ -35,8 +35,8 @@ err := res.Delete()
 // ...
 ```
 
-The example above affects one item, and the example below will delete all items
-in the books table:
+As with the `Update` examples, in the previous case only one item will be affected
+and in the following scenario all items will be altered: 
 
 
 ```go
