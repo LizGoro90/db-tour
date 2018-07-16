@@ -47,9 +47,8 @@ func main() {
 
 	sess.SetLogging(true)
 
-	// The ctx variable is going to be passed to sess.Tx, you
-	// can use any context.Context here. If you don't want to
-	// use a special context you can also pass nil.
+	// The ctx value will be passed to sess.Tx. You can define
+	// any context.Context or pass nil instead. 
 	ctx := context.Background()
 
 	// sess.Tx requires a function, this function takes a
