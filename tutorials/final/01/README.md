@@ -1,4 +1,4 @@
-# Where to go from here?
+# Where to Go From Here?
 
 Thanks for taking the [upper-db][1] tour!
 
