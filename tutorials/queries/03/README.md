@@ -1,7 +1,7 @@
 # Query Large Data Sets
 
-Suppose that you have a very large dataset and that mapping all matching items
-into an slice is impractical for memory and performance reasons.
+If you're working with significantly large data sets, copying all matching items
+into a slice might be impractical for memory and performance reasons.
 
 The `Next` method allows items on a `db.Result` to be mapped one by one:
 
