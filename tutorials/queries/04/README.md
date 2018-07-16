@@ -27,6 +27,9 @@ q = sess.SelectFrom("posts").Paginate(20)
 
 ### Cursor-based Pagination 
 
+You can also set the item where you want to begin and the results you want to 
+fetch thereon:
+
 ```go
 res = sess.Collection("posts").
   Paginate(20). // 20 results per page
