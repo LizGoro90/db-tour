@@ -1,7 +1,6 @@
 # Update, Insert, or Delete Items in a Result Set
 
-Besides querying for data, result-sets can also be used for updating or
-deleting all matching items.
+The items in result sets can not only be queried, but also modified and removed.
 
 If you want to update all the items on a result-set use the `Update` method:
 
