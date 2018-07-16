@@ -1,6 +1,6 @@
 # Paginate Results
 
-Pagination API lets you split the results of a query into chunks containing a
+The pagination API lets you split the results of a query into chunks containing a
 fixed number of items.
 
 ### Simple pagination for db.Result
