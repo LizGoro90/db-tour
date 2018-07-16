@@ -27,7 +27,7 @@ by `One` or `All` when the result set has zero items.
 err = booksTable.Find(1).One(&book)
 if err != nil {
   if err == db.ErrNoMoreRows {
-    // This was expected, let's create a new element.
+    // First possible error scenario
   } else {
     // Something else happened!
     return err
