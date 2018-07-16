@@ -47,8 +47,8 @@ func main() {
 
 	var eaPoe Author
 
-	// If you ever need to use raw SQL, use the Query,
-	// QueryRow and Exec methods of sess:
+	// Query, QueryRow, and Exec are raw SQL methods you can use when
+	// SQLBuilder is not enough for the complexity of your query.
 	rows, err := sess.Query(`SELECT id, first_name, last_name FROM authors WHERE last_name = ?`, "Poe")
 	if err != nil {
 		log.Fatal("Query: ", err)
