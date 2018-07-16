@@ -29,8 +29,8 @@ res, err = sess.InsertInto("books").
   Exec()
 ```
 
-In the example above, using `Columns` is not mandatory, the `Values` method can
-also take an struct and map column-values by itself, like this:
+In this case, using `Columns` is not mandatory. A struct can be passed to the
+`Values` method so it is mapped to columns and values, as shown below:
 
 ```go
 book := Book{
