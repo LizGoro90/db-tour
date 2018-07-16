@@ -45,3 +45,7 @@ res := booksTable.Find()
 err := res.Delete()
 ...
 ```
+
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> In the particular case of SQL databases, you can also choose to use a builder or 
+raw SQL for update, insert, and delete queries. 
