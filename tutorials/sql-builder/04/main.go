@@ -73,7 +73,7 @@ func main() {
 		log.Printf("Query: %v. This is expected on the read-only sandbox", err)
 	}
 
-	// The sqlbuilder package providers tools for working with
+	// The sqlbuilder package provides tools for working with
 	// raw sql.Rows, such as the NewIterator function.
 	rows, err = sess.Query(`SELECT * FROM books LIMIT 5`)
 	if err != nil {
