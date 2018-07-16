@@ -34,7 +34,7 @@ func main() {
 	// This result set includes a single item.
 	res := booksTable.Find(4267)
 
-	// Get the element with the given ID.
+	// The item is retrieved with the given ID.
 	var book Book
 	err = res.One(&book)
 	if err != nil {
