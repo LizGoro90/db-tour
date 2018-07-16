@@ -51,9 +51,8 @@ func main() {
 
 	var book Book
 
-	// If this table has an integer primary key you can pass
-	// an int to Find and Find will look for the element that
-	// matches that primary key.
+	// Find looks for an item that matches the integer
+	// primary key of the "books" table.
 	err = booksTable.Find(1).One(&book)
 	if err != nil {
 		if err == db.ErrNoMoreRows {
