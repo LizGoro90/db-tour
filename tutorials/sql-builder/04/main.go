@@ -43,7 +43,7 @@ func main() {
 	}
 	defer sess.Close()
 
-	sess.SetLogging(true)
+	
 
 	var eaPoe Author
 
