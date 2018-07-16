@@ -2,7 +2,7 @@
 
 The items in result sets can not only be queried, but also modified and removed.
 
-If you want to update all the items on a result-set use the `Update` method:
+If you want to modify the properties of a complete result set, use `Update`:
 
 ```go
 var book Book
