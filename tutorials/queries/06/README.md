@@ -15,9 +15,8 @@ err = res.Update(book)
 ...
 ```
 
-Remember that `Update` will operate in the whole result-set. In the example
-above the whole result-set consists of only one element, while in the example
-below the result-set consists of all the items in the collection:
+Note that this result set consists of only one element, whereas the next result
+set consists of all the items in the collection:
 
 ```go
 res := booksTable.Find()
