@@ -1,8 +1,12 @@
 ### Transactions
 
-Use the `Tx` method on a SQL database session to create a transaction block,
-this method expects a `context.Context` value and a `func(sqlbuilder.Tx) error`
-function.
+Transactions are used to represent any change in the database (such as update,
+insert, and delete queries expressed through SQL builder or raw SQL) to allow
+correct recovery from failures.
+
+To create a transaction block, use the `Tx` method on the SQL database session.
+This method expects a `context.Context` value and a `func(sqlbuilder.Tx) error`
+function (which takes a single sqlbuilder.Tx argument and returns an error).
 
 ```go
 ctx := context.Background()
