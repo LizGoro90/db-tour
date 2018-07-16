@@ -5,6 +5,8 @@ fixed number of items.
 
 ### Simple Pagination 
 
+You can use numbered pages, for example:
+
 ```go
 res = sess.Collection("posts").Paginate(20) // 20 results per page
 
