@@ -14,8 +14,8 @@ for res.Next(&book) {
 }
 ```
 
-When a result set does not have any more items, `Next` will return `false` and
-that'll break the loop.
+`Next` will return `false` once there are no more items left in the result set,
+and consequently break the loop.
 
 When dealing with results one by one you'll also need to check for errors (with `Err()`) and
 free locked resources manually (with `Close`).
