@@ -24,8 +24,6 @@ scenarios can be defined. For example, `db.ErrNoMoreRows`, which is returned
 by `One` or `All` when the result set has zero items.
 
 ```go
-// If this table has an integer primary key you can pass an int to Find and
-// Find will look for the element that matches that primary key.
 err = booksTable.Find(1).One(&book)
 if err != nil {
   if err == db.ErrNoMoreRows {
