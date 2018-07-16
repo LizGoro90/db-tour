@@ -1,4 +1,4 @@
-# How to use transactions
+### Transactions
 
 Use the `Tx` method on a SQL database session to create a transaction block,
 this method expects a `context.Context` value and a `func(sqlbuilder.Tx) error`
