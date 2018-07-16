@@ -35,9 +35,8 @@ func main() {
 	// Order by "id" (descending)
 	res := booksTable.Find().OrderBy("-xid")
 
-	// Dumping all items into an slice may not be practical for really large
-	// datasets, in that case you can use Next/Close to go over all items one by
-	// one.
+	// Next is used to go over all items one by one. It proves useful when 
+	// copying large data sets into a slice is impractical. 
 	var book Book
 	for res.Next(&book) {
 		log.Printf("Book %d:\t%#v", book.ID, book)
