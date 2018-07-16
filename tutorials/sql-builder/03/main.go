@@ -81,8 +81,8 @@ func main() {
 		log.Printf("New book id: %d", id)
 	}
 
-	// Delete the book we just created (and any book with the
-	// same name).
+	// We use sqlbuilder.Deleter to erase the book we've just created (and any
+	// other book with the same name).
 	q := sess.DeleteFrom("books").
 		Where("title", "The Crow")
 	log.Printf("Compiled query: %v", q)
