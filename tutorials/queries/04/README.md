@@ -18,14 +18,11 @@ err = res.All(&posts)
 err = res.Page(2).All(&posts) 
 ```
 
-### Simple pagination for SQL builder
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> If you're working with SQL builder, use `SelectFrom` instead of Collection: 
 
 ```go
 q = sess.SelectFrom("posts").Paginate(20)
-
-err = res.All(&posts) // First 20 results of the query
-
-err = res.Page(2).All(&posts) // Results from page 2 (limit 20, offset 40)
 ```
 
 ### Cursor based pagination (both for db.Result and SQL Builder)
