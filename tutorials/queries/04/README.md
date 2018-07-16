@@ -8,7 +8,8 @@ fixed number of items.
 You can use numbered pages, for example:
 
 ```go
-res = sess.Collection("posts").Paginate(20) // 20 results per page
+// Create paginator and set the amount of items by chunk
+res = sess.Collection("posts").Paginate(20) 
 
 err = res.All(&posts) // First 20 results of the query
 
