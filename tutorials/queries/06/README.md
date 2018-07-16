@@ -52,3 +52,6 @@ raw SQL for update, insert, and delete queries.
 
 Given that the example in this tour is based on a SQL database, we'll elaborate
 hereunder on the use of both a) SQL builder methods and b) raw SQL statements.
+
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> If you're working with a NoSQL database, continue to next page.
