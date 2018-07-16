@@ -35,7 +35,7 @@ func main() {
 
 	var customers []Customer
 
-	// Grabs page 2.
+	// Copies all the items from page 2 into the customers slice. 
 	err = p.Page(2).All(&customers)
 	if err != nil {
 		log.Fatal(err)
