@@ -37,7 +37,8 @@ res = sess.Collection("posts").
 
 err = res.All(&posts) 
 
-// Get the next 20 results starting from the last item of the previous query.
+// Get the results that follow the last item of the previous
+// query in groups of 20.
 res = res.NextPage(posts[len(posts)-1].ID)
 err = res.All(&posts) // Results from page 1, limit 20, offset 20
 ```
