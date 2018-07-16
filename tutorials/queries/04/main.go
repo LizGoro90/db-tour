@@ -28,7 +28,7 @@ func main() {
 
 	customersTable := sess.Collection("customers")
 
-	// Creates a paginator with 10 items per page.
+	// Creates a paginator and sets 10 items by page. 
 	p := customersTable.Find().
 		OrderBy("last_name", "first_name").
 		Paginate(10)
