@@ -40,7 +40,9 @@ err = res.All(&posts)
 // Get the results that follow the last item of the previous
 // query in groups of 20.
 res = res.NextPage(posts[len(posts)-1].ID)
-err = res.All(&posts) // Results from page 1, limit 20, offset 20
+
+// Get the first 20 results (page 1)(limit 20, offset 20)
+err = res.All(&posts) 
 ```
 
 ### Other commonly used pagination tools
