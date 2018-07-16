@@ -1,4 +1,4 @@
-# Updating or deleting items on a result set
+# Update, Insert, or Delete Items in a Result Set
 
 Besides querying for data, result-sets can also be used for updating or
 deleting all matching items.
