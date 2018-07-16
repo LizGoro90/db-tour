@@ -1,17 +1,4 @@
-# UPDATE, INSERT and DELETE queries
-
-The `SelectFrom` method creates and returns a [Selector][1] that can be used to
-build a SELECT query.
-
-```go
-var eaPoe Author
-
-q := sess.SelectFrom("authors").
-  Where("last_name", "Poe").
-  One(&eaPoe)
-
-err = q.One(&eaPoe)
-```
+## a) SQL Builder
 
 The `Update` method creates and returns an [Updater][2] that can be used to
 build an UPDATE query:
