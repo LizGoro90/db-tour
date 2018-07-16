@@ -65,7 +65,7 @@ func main() {
 		log.Printf("Query: %v. This is expected on the read-only sandbox", err)
 	}
 
-	// Now let's create a new E. A. P. book.
+	// We use sqlbuilder.Inserter to add a new book under "Edgar Allan Poe".
 	book := Book{
 		Title:    "The Crow",
 		AuthorID: eaPoe.ID,
