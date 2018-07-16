@@ -38,3 +38,7 @@ if err != nil {
 ![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
 > Error scenarios may or may not be fatal depending on the nature of your
 application, so make sure you're handling them properly. 
+
+![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
+> The db.v3 package defines different variables that return error messages.
+To learn more, click [here](https://godoc.org/upper.io/db.v3#pkg-variables)
