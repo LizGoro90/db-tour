@@ -13,7 +13,6 @@ var settings = postgresql.ConnectionURL{
 	Password: `demop4ss`,
 }
 
-// Customer represents an item from the "customers" table.
 type Customer struct {
 	ID        uint   `db:"id"`
 	FirstName string `db:"first_name"`
