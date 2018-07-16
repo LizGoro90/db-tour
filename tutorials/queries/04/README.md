@@ -1,4 +1,4 @@
-# Pagination
+# Paginate Results
 
 Pagination API lets you split the results of a query into chunks containing a
 fixed number of items.
