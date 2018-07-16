@@ -29,7 +29,7 @@ if err != nil {
   if err == db.ErrNoMoreRows {
     // First possible error scenario
   } else {
-    // Something else happened!
+    // All other possible error scenarios
     return err
   }
 }
