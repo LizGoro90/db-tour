@@ -11,7 +11,8 @@ You can use numbered pages, for example:
 // Create paginator and set the amount of items by chunk
 res = sess.Collection("posts").Paginate(20) 
 
-err = res.All(&posts) // First 20 results of the query
+// Get first chunk of results (page 1)
+err = res.All(&posts) 
 
 err = res.Page(2).All(&posts) // Results from page 2 (limit 20, offset 40)
 ```
