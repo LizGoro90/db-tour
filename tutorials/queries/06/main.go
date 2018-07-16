@@ -31,7 +31,7 @@ func main() {
 
 	booksTable := sess.Collection("books")
 
-	// A result set that has only one element.
+	// This result set includes a single item.
 	res := booksTable.Find(4267)
 
 	// Get the element with the given ID.
