@@ -35,7 +35,7 @@ res = sess.Collection("posts").
   Paginate(20). 
   Cursor("id") 
 
-err = res.All(&posts) // First 20 results of the query
+err = res.All(&posts) 
 
 // Get the next 20 results starting from the last item of the previous query.
 res = res.NextPage(posts[len(posts)-1].ID)
