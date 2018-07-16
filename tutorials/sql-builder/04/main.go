@@ -67,8 +67,7 @@ func main() {
 
 	log.Printf("%#v", eaPoe)
 
-	// Make sure you're using Exec or Query depending on the
-	// specific situation.
+	// Make sure to use Exec or Query, as the case may be.
 	_, err = sess.Exec(`UPDATE authors SET first_name = ? WHERE id = ?`, "Edgar Allan", eaPoe.ID)
 	if err != nil {
 		log.Printf("Query: %v. This is expected on the read-only sandbox", err)
