@@ -91,7 +91,7 @@ func main() {
 		}
 		log.Printf("Random book: %#v", book)
 
-		// If the function returns no error the transaction is commited.
+		// If the function returns no error the transaction is committed.
 		return nil
 	})
 
