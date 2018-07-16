@@ -46,8 +46,8 @@ func main() {
 
 	var eaPoe Author
 
-	// Using sqlbuilder.Selector to get E .A. Poe from our
-	// authors table.
+	// We use sqlbuilder.Selector to retrieve the last name "Poe" from the 
+	// "authors" table.
 	err = sess.SelectFrom("authors").
 		Where("last_name", "Poe"). // Or Where("last_name = ?", "Poe")
 		One(&eaPoe)
