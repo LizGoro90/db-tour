@@ -17,8 +17,8 @@ for res.Next(&book) {
 `Next` will return `false` once there are no more items left in the result set,
 and consequently break the loop.
 
-When dealing with results one by one you'll also need to check for errors (with `Err()`) and
-free locked resources manually (with `Close`).
+When handling results one by one, you'll also need to check for errors (with `Err`) 
+and free locked resources manually (with `Close`).
 
 ```go
 if err := res.Err(); err != nil {
