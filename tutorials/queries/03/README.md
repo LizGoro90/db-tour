@@ -3,7 +3,7 @@
 If you're working with significantly large data sets, copying all matching items
 into a slice might be impractical for memory and performance reasons.
 
-The `Next` method allows items on a `db.Result` to be mapped one by one:
+In this case, you can use `Next` to map the items in the `db.Result` one by one:
 
 ```go
 res := booksTable.Find().OrderBy("-id")
