@@ -33,8 +33,6 @@ func main() {
 	// case) through a collection reference.
 	nonexistentTable := sess.Collection("nonexistent_table")
 
-	// For the following method, make sure your DBMS allows to
-	// use collections or tables that may not exist.
 	_, err = nonexistentTable.Insert(&Book{})
 	if err != nil {
 		log.Println("nonexistent_table: ", err)
