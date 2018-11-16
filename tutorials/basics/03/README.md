@@ -16,9 +16,5 @@ which are handy for knowing whether a collection exists or not:
 log.Println("Collection:", col.Name(), "Exists?:", col.Exists())
 ```
 
-![Note](https://github.com/LizGoro90/db-tour/tree/master/static/img)
-< You can create references for collections that do not
-< necessarily exist yet.
-
 [1]: https://godoc.org/upper.io/db.v3#Database
 [2]: https://godoc.org/upper.io/db.v3#Collection
